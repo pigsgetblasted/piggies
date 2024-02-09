@@ -26,4 +26,16 @@ If the bomb exploded BEFORE the snapshot, you will get an allocation of our $BLA
 The amount of your allocation will depend on: (1) How close your piggybomb exploded to the snapshot, (2) How powerful the bomb was, and (3) How many others exploded before the snapshot.
 
 (4)
-There are a limited 1000 supply of NUCLEAR PIGGYBOMBS. These bombs have the highest power level and are reserved for OG players.
+There are a limited 1000 supply of NUCLEAR PIGGYBOMBS. These bombs have the highest power level and are reserved for allowlisted early community members.
+
+(5)
+A quick word on the game theory.
+
+Holding is generally the safest choice and it pays to mint early and hold until the end. However, if everyone does this then the allocation gets diluted down significantly so exploding becomes the more profitable strategy. Still, you're guaranteed a reward.
+
+Timing the explosion is tricky because no one knows when the snapshot will be. It's safer to explode early since it helps ensure you beat  the snapshot but if everyone explodes early and the snapshot happens late those who waited and risked more get a far higher prize.
+
+The size of bomb you mint matters too. Big bombs yield more than small bombs so you can diversify with a lot of small bombs or take a bigger risk with a big bomb.
+
+(6)
+Always remember...Bulls and bears make money but pigs get blasted.

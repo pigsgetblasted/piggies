@@ -1,0 +1,29 @@
+(1) 
+Mint a PIGGYBOMB NFT, which has an unlimited supply. There are three power levels, each with a different price in ETH. All your ETH gets refunded when you burn ("explode") your NFT minus a small mint fee so the cost to play the game is minimal. The nonrefundable mint fee starts small but rises *dramatically* as the game advances so it's best to mint early as later players are penalized.
+
+(2) 
+When you blow up a PIGGYBOMB, you get all your ETH back + Blast's native interest. You can blow it up whenever you want through a burn function in the contract or a button on the website.
+
+(3) 
+The game will run for three months.
+
+Once it starts you have two options.
+
+A. Keep your bomb unexploded until the game ends. By doing this you will get an allocation of our $BLAST developer airdrop reserved for the unexploded. The amount will depend on: (1) how many people kept their bomb unexploded until the end, (2) how powerful your piggybomb is, and (3) how long since the bomb was minted (so you can transfer wallets). 
+
+In addition to the $BLAST, at the end of the game all unexploded piggybombs will receive another benefit that will be announced then.
+
+B. Explode your bomb.
+
+If you choose to explode your piggybomb during the game, your success will depend on a mystery snapshot.
+
+After the game ends, we will use Chainlink VRF to retroactively and randomly select a day/time and take a snapshot then. No one, including us, will know when the snapshot will land and the reveal will be public and auditable.
+
+If your bomb exploded AFTER the snapshot, you get no $BLAST allocation. Sorry. But you get your ETH back + Blast's native yield, so you're not too upset.
+
+If the bomb exploded BEFORE the snapshot, you will get an allocation of our $BLAST developer airdrop reserved for the exploded. This allocation will be 2X bigger than the allocation for unexploded.
+
+The amount of your allocation will depend on: (1) How close your piggybomb exploded to the snapshot, (2) How powerful the bomb was, and (3) How many others exploded before the snapshot.
+
+(4)
+There are a limited 1000 supply of NUCLEAR PIGGYBOMBS. These bombs have the highest power level and are reserved for OG players.

@@ -1,0 +1,471 @@
+#section1 {
+    padding: 150px 0;
+}
+
+#section1 .image-box {
+    padding-left: 40px;
+    max-width: 480px;
+    margin-left: auto;
+}
+
+@media only screen and (max-width: 767px) {
+    #section1 {
+        padding: 50px 0;
+    }
+
+    #section1 .heading {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+    #section1 .image-box {
+        padding-left: 0px;
+        max-width: 420px;
+        margin: 30px auto;
+    }   
+}
+
+.nav-action {
+    width: 210px;
+    color: #e29e49;
+    text-align: center;
+    text-transform: uppercase;
+    background-image: url(../images/Subtract.png);
+    background-position: 50%;
+    background-size: 100% 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: Chakrapetch, sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 700;
+    text-decoration: none;    
+    display: inline-block;
+}
+
+a.nav-action:hover {
+    background-image: url(../images/SubtractHover.png);
+}
+
+#section2 .action-box {
+    margin-top: 20px;
+}
+
+#section2 .content-box {
+    padding: 80px 0
+}
+
+@media only screen and (max-width: 767px) {
+    #section2 .content-box {
+        padding: 40px 0
+    }
+
+    #section2 .grid {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+}
+
+#section3 {
+    margin-top: 150px;
+}
+
+@media only screen and (max-width: 767px) {
+    #section3 {
+        margin-top: 0px;
+    }
+
+
+}
+
+#section3  .action-box {
+    margin-top: 10px;
+}
+
+#section3 .flex {
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 40px;
+    justify-content: center;
+}
+
+#section3 .flex-item {
+    width: 30%;
+}
+
+@media only screen and (max-width: 767px) {
+    #section3 .flex {
+        flex-wrap: wrap;    
+        max-width: 420px;    
+        margin: 0 auto;
+    }
+
+    #section3 .flex-item {
+        width: 100%;
+    }
+}
+
+
+#section3 .title-box {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+#section3 .heading-box {
+    padding-top: 100px;   
+}
+
+#section3 .content-box {
+    padding-bottom: 120px;   
+}
+
+@media only screen and (min-width: 992px) {
+    #section3 .section-overlay {
+        position: relative;
+        background-image: url(../images/BigSubtract2.png);
+        background-position: 50%;
+        background-size: 100% 100%;
+    }
+
+}
+
+
+
+#image-box1 {
+    
+    position: absolute;
+    width: 90px;
+    right: 40px;
+    top: 50px;
+}
+
+#image-box2 {
+    position: absolute;
+    left: 40px;
+    bottom: 60px;
+}
+
+#image-box3 {
+    position: absolute;
+    right: 40px;
+    bottom: 80px;
+    width: 55%;
+}
+
+@media only screen and (max-width: 991px) {
+    #image-box1 {
+        display: none;
+    }
+    
+    #image-box2 {
+        display: none;
+    }
+    
+    #image-box3 {
+        display: none;
+    }
+    
+    #section3 .content-box {
+        padding-bottom: 0px;
+    }
+}
+
+
+#section4 {
+    padding-top: 150px;
+    padding-bottom: 80px;
+}
+
+@media only screen and (max-width: 991px) {
+    #section4 {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+}
+
+
+#section7 {
+    padding: 200px 0;
+}
+
+@media only screen and (max-width: 991px) {
+    #section7 {
+        padding: 90px 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #section7 {
+        padding: 70px 0;
+    }
+}
+
+.grid-image {
+    position: absolute;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 3px;
+}
+
+.grid-image img {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 479px) {
+    .grid-image {
+        display: none;   
+    }
+}
+
+
+#section6 {
+    padding-top: 80px;
+}
+
+.history-item {
+    position: relative;
+    width: 250px;
+    padding: 10px 20px;
+    border-left: 4px solid #fdb151;
+}
+.history-item h3 {
+    margin-top: 0;
+    padding: 5px;
+    display: inline-block;
+    font-family: Chakrapetch, sans-serif;
+    color: #000;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    background-color: #fdb151;
+}
+
+.history-item h4 {
+    font-family: Chakrapetch, sans-serif;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+.history-item p {
+    font-family: Chakrapetch, sans-serif;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    margin-bottom: 0;
+}
+
+.history-line-box {
+    padding-top: 180px;
+    padding-bottom: 180px;
+}
+.history-line {
+    height: 2px;
+    background: #5c401e;
+}
+
+.history-line::before {
+    content: '';
+    background-color: #5c401e;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    top: calc(50% - 4px);
+}
+
+.history-item::before {
+    content: '';
+    background-color: #5c401e;
+    position: absolute;
+    width: 4px;
+    top: calc(100% + 11px);
+    left: 50%;
+    height: 15px;    
+}
+
+.history-item.odd::before {
+    top: -29px;
+}
+
+.history-box {
+    overflow:hidden;
+}
+
+.history-box-wrapper {
+    position: relative;  
+    min-width: 100%;  
+}
+
+.pigs-box {
+    overflow:hidden;
+}
+
+.pigs-box-wrapper {    
+    position: relative;    
+    height: 180px;
+    min-width: 100%;
+    background-image: url(../images/Frequency.png);    
+}
+
+.pig-item {    
+    position: absolute;
+    top: 0;
+    width: 55px;
+}
+
+.pig-item.item1 {
+    top: 65px;
+}
+
+.pig-item.item2 {
+    top: 30px;
+}
+
+.pig-item.item3 {
+    top: 5px;
+}
+
+.pig-image {
+    text-align: center;
+}
+.pig-image img {
+    width: 48px;
+}
+.pig-text {
+    padding-top: 5px;
+}
+.pig-text p {
+    color: #fff;
+    font-family: Chakrapetch, sans-serif;
+    font-size: 8px;
+    line-height: 12px;
+    font-style: italic;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+#section3 .mint-label {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    font-family: Chakrapetch, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #000;
+    padding: 10px 10px;
+    background-color: #fdb151;
+}
+
+#section2 .mint-qty {
+    position: absolute;
+    padding: 10px 10px;
+    left: 0;
+    bottom: 0;
+    background-color: #fdb151;
+    display: flex;
+    align-items: center;
+}
+
+
+#section2 .mint-label {
+    font-family: Chakrapetch, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #000;
+    padding-left: 8px;
+    letter-spacing: -0.5px;
+}
+
+#section2 .mint-label span {
+    font-weight: 400;
+}
+
+.mint-qty-input {
+    width: 60px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.mint-qty-input input {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;    
+    text-align: center;
+    background: none;
+    -webkit-border-image: none;
+    background-image: none;
+    border-image-outset: 0;
+    border-width: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 18px;
+    line-height: 30px;
+
+}
+
+.mint-qty-input input:focus,
+.mint-qty-input input:active {
+    border-color: transparent;
+}
+
+.minus-btn {
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 16px;
+    padding: 0;
+}
+
+.plus-btn {
+    position: absolute;
+    right: 0;
+    top: 7px;
+    width: 16px;
+    padding: 0;
+}
+
+.minus-btn img, .plus-btn img {
+    width: 100%;
+}
+
+.w-nav-connect {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+@media screen and (max-width: 991px) {
+    .w-nav-connect {
+      right: 100px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .w-nav-connect {
+      right: 80px;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .nav-action {
+      padding: 15px 0;
+      width: 180px;
+    }
+}

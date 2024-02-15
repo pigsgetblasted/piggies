@@ -42,6 +42,10 @@
     display: inline-block;
 }
 
+a.nav-action:hover {
+    background-image: url(../images/SubtractHover.png);
+}
+
 #section2 .action-box {
     margin-top: 20px;
 }
@@ -80,12 +84,12 @@
 #section3 .flex {
     max-width: 800px;
     margin: 0 auto;
-    flex-wrap: nowrap;
     gap: 40px;
+    justify-content: center;
 }
 
 #section3 .flex-item {
-    width: 33.333%;
+    width: 30%;
 }
 
 @media only screen and (max-width: 767px) {
@@ -393,7 +397,7 @@
 
 .mint-qty-input {
     width: 60px;
-    background-color: #fff;
+    background-color: #f9f9f9;
     position: relative;
 }
 
@@ -422,12 +426,46 @@
 .minus-btn {
     position: absolute;
     left: 0;
-    top: 10px;
+    top: 7px;
+    width: 16px;
+    padding: 0;
 }
-
 
 .plus-btn {
     position: absolute;
     right: 0;
-    top: 10px;
+    top: 7px;
+    width: 16px;
+    padding: 0;
+}
+
+.minus-btn img, .plus-btn img {
+    width: 100%;
+}
+
+.w-nav-connect {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+@media screen and (max-width: 991px) {
+    .w-nav-connect {
+      right: 100px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .w-nav-connect {
+      right: 80px;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .nav-action {
+      padding: 15px 0;
+      width: 180px;
+    }
 }

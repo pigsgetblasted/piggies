@@ -1925,6 +1925,13 @@ textarea.w-input, textarea.w-select {
   position: relative;
 }
 
+@media screen and (min-width: 992px) {
+  .w-nav-menu {
+    padding-right: 230px;
+    top: 20px;
+  }
+}
+
 [data-nav-menu-open] {
   text-align: center;
   min-width: 200px;
@@ -2235,6 +2242,10 @@ textarea.w-input, textarea.w-select {
   display: block;
 }
 
+a.mint-button:hover {
+  background-image: url("../images/SubtractHover.png");
+}
+
 .header {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -2390,6 +2401,7 @@ textarea.w-input, textarea.w-select {
 }
 
 .navigation-container {
+  position: relative;
   max-width: 1440px;
   padding: 10px 40px;
 }
@@ -2410,6 +2422,8 @@ textarea.w-input, textarea.w-select {
   text-decoration: none;
   display: inline;
 }
+
+
 
 .navbar {
   background-color: #000;
@@ -2647,4 +2661,11 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+a {
+  transition: all 0.5s ease;
+}
+a:hover {
+  color: #fff;
 }

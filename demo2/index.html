@@ -88,7 +88,7 @@
                                         <button class="minus-btn">
                                             <img src="images/minus.png" alt="" />                                            
                                         </button>
-                                        <input type="text" id="quantity-small" name="qty" value="1" min="1" step="1" />
+                                        <input type="number" id="quantity-small" name="qty" value="1" min="1" step="1" />
                                         <button class="plus-btn">
                                             <img src="images/plus.png" alt="" />                                            
                                         </button>
@@ -108,7 +108,7 @@
                                         <button class="minus-btn">
                                             <img src="images/minus.png" alt="" />                                            
                                         </button>
-                                        <input type="text" id="quantity-medium" name="qty" value="1" min="1" step="1" />
+                                        <input type="number" id="quantity-medium" name="qty" value="1" min="1" step="1" />
                                         <button class="plus-btn">
                                             <img src="images/plus.png" alt="" />                                            
                                         </button>
@@ -128,7 +128,7 @@
                                         <button class="minus-btn">
                                             <img src="images/minus.png" alt="" />                                            
                                         </button>
-                                        <input type="text" id="quantity-large" name="qty" value="1" min="1" step="1" />
+                                        <input type="number" id="quantity-large" name="qty" value="1" min="1" step="1" />
                                         <button class="plus-btn">
                                             <img src="images/plus.png" alt="" />                                            
                                         </button>
@@ -148,7 +148,7 @@
                                         <button class="minus-btn">
                                             <img src="images/minus.png" alt="" />                                            
                                         </button>
-                                        <input type="text" id="quantity-nuclear" name="qty" value="1" min="1" max="1" step="1" />
+                                        <input type="number" id="quantity-nuclear" name="qty" value="1" min="1" max="1" step="1" />
                                         <button class="plus-btn">
                                             <img src="images/plus.png" alt="" />                                            
                                         </button>
@@ -166,7 +166,7 @@
         </section>
 
         <!-- Section3 -->
-        <section class="section" id="section3">
+        <section id="my-piggybombs-container" class="section">
             <div class="container">
                 <div class="section-overlay">
                     <div class="heading-box center">
@@ -174,7 +174,7 @@
                         <div class="section__subheading">Unexploded Bombs. <span class="yellow">Click to explode.</span></div>
                     </div>
                     <div class="content-box">
-                        <div class="flex">
+                        <div id="my-piggybombs" class="flex">
                             <div class="flex-item">
                                 <div class="mint-item-box">
                                     <div class="image-box">
@@ -282,9 +282,7 @@
                             <h3 class="heading__medium right">Game <span class="yellow">Clock:</span> 90D 0H 0M</h3>
                         </div>
     
-                        <div class="flex-box">
-    
-                        </div>
+                        <div class="flex-box"></div>
                     </div>
 
                     <div class="image-box" id="image-box1"><img src="images/frame2.png" alt="" /></div>
@@ -295,7 +293,7 @@
         </section>
 
         <!-- Section4 -->
-        <section class="section" id="section4">
+        <section id="my-exploded-container" class="section">
             <div class="container">
                 <div class="heading-box center">
                     <div class="container short">
@@ -305,7 +303,7 @@
                 </div>
                 <div class="content-box">
                     <div class="pigs-box">
-                        <div class="pigs-box-wrapper">
+                        <div id="my-exploded" class="pigs-box-wrapper">
                             <div class="pig-item">
                                 <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
                                 <div  class="pig-text">
@@ -604,12 +602,13 @@
         <script type="text/javascript" src="/demo2/js/merkle.js"></script>
         <script type="text/javascript" src="/demo2/js/eth-session.js"></script>
 <script>
-// TODO: merkle
-const merkle = new Merkle();
-merkle.load([
-
-
-]);
+const epoch = 2177302;
+const powerMap = {
+  1: 'Nuclear',
+  2: 'Big',
+  3: 'Mid',
+  4: 'Low',
+};
 
 let config = {
   burned: -1,
@@ -624,6 +623,12 @@ let config = {
   }
 };
 
+const merkle = new Merkle();
+merkle.load([
+
+
+]);
+
 const session = new EthereumSession({
 	chain:           EthereumSession.COMMON_CHAINS[168587773],
 	contractAddress: '0x9558EB5FFc6235220D26dB35dACCd41072D7Ce20',
@@ -633,6 +638,114 @@ const session = new EthereumSession({
 const abbrev = ( account ) => {
 	return account.substring( 0, 6 ) +'...'+ account.substring( account.length - 4 );
 }
+
+const formatToken = (token, tokenId) => ({
+  tokenId,
+  burnTS: parseInt(token.burnTS, 10),
+  mintTS: parseInt(token.mintTS, 10),
+  owner: token.owner,
+  tokenType: parseInt(token.tokenType, 10),
+  value: BigInt(token.value)
+});
+
+const getAccountTokens = async (currentAccount) => {
+  const promises = [];
+  const balance = await session.getContract().methods.balanceOf(currentAccount).call();
+  for (let i = 0; i < balance; ++i){
+    const idx = i;
+    const p = threeTry(() => session.getContract().methods.tokenOfOwnerByIndex(currentAccount, idx).call());
+    promises.push(p);
+  }
+  
+  const exploded = [];
+  const tokenIds = await Promise.all(promises);
+
+/*
+  const fullAccount = Web3.utils.padLeft(currentAccount, 64).toLowerCase();
+  const fullZero = Web3.utils.padLeft('0x00', 64);
+  const toLogs = await session.web3client.eth.getPastLogs({
+    fromBlock: epoch,
+    // toBlock: "latest",
+    address: session.contractAddress,
+    topics: [
+      "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+      null,       // From
+      fullAccount // To
+    ]
+  });
+
+  if (!toLogs.length)
+    return [];
+
+
+  const fromLogs = await session.web3client.eth.getPastLogs({
+    fromBlock: epoch,
+    // toBlock: "latest",
+    address: session.contractAddress,
+    topics: [
+      "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", // Transfer
+      fullAccount // From
+    ]
+  });
+
+  
+  const allLogs = fromLogs.length ?
+    [...toLogs, ...fromLogs] :
+    toLogs;
+
+  allLogs.sort((left, right) => {
+    let res = left.blockNumber - right.blockNumber;
+    if (res !== 0)
+      return res;
+      
+    res = left.transactionIndex - right.transactionIndex;
+    if (res !== 0)
+      return res;
+
+    return left.logIndex - right.logIndex;
+  });
+
+  const explodedIds = [];
+  const tokenSet = new Set();
+  for (let log of allLogs) {
+    if (log.topics[2].toLowerCase() === fullAccount) {
+      tokenSet.add(BigInt(log.topics[3]));
+    }
+    else{
+      tokenSet.remove(BigInt(log.topics[3]));
+
+      if (log.topics[2].toLowerCase() === fullZero) {
+        explodedIds.push(BigInt(log.topics[3]));
+      }      
+    }
+  }
+
+
+  // let tokens = await session.getContract().methods.getTokens(tokenIds).call();
+  let exploded = await Promise.all(
+    explodedIds.map(tokenId => {
+      return threeTry(() => session.getContract().methods.tokens(tokenId).call());
+    })
+  );
+  exploded = exploded.map((e, idx) => {
+    return formatToken(e, explodedIds[idx])
+  });
+  
+
+  // let tokens = await session.getContract().methods.getTokens(tokenIds).call();
+  const tokenIds = Array.from(tokenSet);
+  */
+  let tokens = await Promise.all(
+    tokenIds.map(tokenId => {
+      return threeTry(() => session.getContract().methods.tokens(tokenId).call());
+    })
+  );
+  tokens = tokens.map((t, idx) => {
+    return formatToken(t, tokenIds[idx]);
+  });
+
+  return {exploded, tokens};
+};
 
 const handleConnect = async (evt, deep) => {
 	if (evt?.cancelable)
@@ -660,7 +773,7 @@ const handleConnect = async (evt, deep) => {
 	}
 }
 
-
+// TODO: refresh
 const handleConnected = async () => {
 	const allAccounts = await session.getWalletAccounts();
   if (!allAccounts?.length)
@@ -670,10 +783,7 @@ const handleConnected = async () => {
   const currentAccount = allAccounts[0];
 	document.getElementById('connect-wallet').innerText = abbrev(currentAccount);
 
-  console.time();
   const tmpConfig = await session.getContract().methods.getConfig().call();
-  console.timeEnd();
-
   config.burned = tmpConfig.burned;
   config.feePercent = BigInt(tmpConfig.feePercent);
   config.saleState = tmpConfig.saleState;
@@ -685,8 +795,11 @@ const handleConnected = async () => {
 
   document.getElementById('burned').innerText = config.burned;
   document.getElementById('total-supply').innerText = config.totalSupply;
-};
 
+  const {exploded, tokens} = await getAccountTokens(currentAccount);
+  renderTokens(tokens);
+  renderExploded(exploded);
+};
 
 const handleInit = async () => {
 	try{
@@ -696,7 +809,6 @@ const handleInit = async () => {
 		console.warn({ err });
 	}
 };
-
 
 const handleMintSmall = async () => {
   const quantity = document.getElementById('quantity-small').value;
@@ -720,14 +832,13 @@ const handleMintNuclear = async () => {
 
 const handleMint = async (quantity, tokenType) => {
   try {
-    const tmp = parseInt(quantity, 10);
-    if (Number.isNaN(tmp)) {
+    const tmpQuantity = parseInt(quantity, 10);
+    if (Number.isNaN(tmpQuantity)) {
       console.warn(`Invalid quantity: ${quantity}`);
       return;
     }
 
-
-    if (quantity === 0) {
+    if (tmpQuantity === 0) {
       alert('Please enter a quantity');
       console.warn(`Invalid quantity: ${quantity}`);
       return;
@@ -782,15 +893,19 @@ const handleMint = async (quantity, tokenType) => {
     const priceEach = config.prices[tokenType];
     const totalValue = BigInt(quantity) * priceEach;
     const totalValueWithFees = totalValue * feeNumerator / feeDenominator;
-    await session.getContract().methods.mint(quantity, tokenType, proof).estimateGas({
+    const gasLimit = await session.getContract().methods.mint(quantity, tokenType, proof).estimateGas({
       from: currentAccount,
       value: String(totalValueWithFees)
     });
 
     const txn = await session.getContract().methods.mint(quantity, tokenType, proof).send({
       from: currentAccount,
+      gas: gasLimit,
       value: String(totalValueWithFees)
     });
+
+    alert("Congratulations! Mint successful, get ready to explode some piggies.");
+    handleConnected();
   }
   catch (err) {
     if (err.code === -32000) {
@@ -826,6 +941,149 @@ const handleMint = async (quantity, tokenType) => {
     console.error(error);
     alert(error.message);
   }
+};
+
+const handleTokenBurn = async (evt, token) => {
+  try {
+    if (evt?.cancelable)
+      evt?.preventDefault();
+
+    let currentAccount;
+    if (await handleConnect(null, true)) {
+    	const allAccounts = await session.getWalletAccounts();
+      if (!allAccounts?.length) {
+        alert('Please connect your wallet');
+        return;      
+      }
+
+      currentAccount = allAccounts[0];
+    }
+    else{
+      alert('Please connect your wallet');
+      return;
+    }
+
+
+    const gasLimit = await session.getContract().methods.burn([token.tokenId]).estimateGas({
+      from: currentAccount,
+    });
+
+    const txn = await session.getContract().methods.burn([token.tokenId]).send({
+      from: currentAccount,
+      gas: gasLimit
+    });
+
+    alert("BOOM! Burn successful!");
+    handleConnected();
+  }
+  catch (err) {
+    if (err.code === -32000) {
+      alert("Not enough ETH");
+      return;
+    }
+
+    const error = EthereumSession.getError(err);
+    if (error.data) {
+      const selector = error.data.substring(0, 10);
+      const abi = session.errors[selector];
+      if(abi){
+        if(abi.inputs?.length){
+          const args = error.data.substring(10);
+          const decoded = session.web3client.eth.abi.decodeParameters(abi.inputs, args);
+
+          const params = [];
+          for(let i = 0; i < abi.inputs.length; ++i){
+            params.push(decoded[i]);
+          }
+          error.message = abi.name +'('+ params.join(', ') +')';
+        }
+        else{
+          error.message = abi.name;
+        }
+        
+        if (error.message.startsWith("SalesClosed")) {
+          error.message = "Sales are closed";
+        }
+      }
+    }
+
+    console.error(error);
+    alert(error.message);
+  }
+};
+
+const renderExploded = (exploded) => {
+  const myExploded = document.getElementById('my-exploded');
+  if (exploded.length) {
+    myExploded.innerHTML = '';
+
+    for (const token of exploded) {
+      const el = renderToken(token);
+      myExploded.appendChild(el);
+    }
+  }
+  else{
+    myExploded.innerHTML = "It's almost time for makin' bacon!";
+  }
+};
+
+const renderTokens = (tokens) => {
+  const myPiggyBombs = document.getElementById('my-piggybombs');
+  if (tokens.length) {
+    myPiggyBombs.innerHTML = '';
+
+    for (const token of tokens) {
+      const el = renderToken(token, true);
+      myPiggyBombs.appendChild(el);
+    }
+  }
+  else{
+    myPiggyBombs.innerHTML = "Get more piggies!";
+  }
+};
+
+const threeTry = (callback) => {
+  return new Promise(async (resolve, reject) => {
+    let lastError;
+    for(let i = 0; i < 3; ++i) {
+      try{
+        const result = await callback();
+        resolve(result);
+        return;
+      }
+      catch(err) {
+        lastError = err;
+      }
+    }
+    
+    reject(lastError);
+  });
+};
+
+const renderToken = (token, canBurn) => {
+  const date = new Date(token.mintTS * 1000);
+  const power = powerMap[token.tokenType];
+  const innerHTML = `
+      <div class="mint-item-box">
+          <div class="image-box">
+              <img src="images/pig2.png" loading="lazy" alt="" class="full-image">
+              <div class="mint-label">Power: ${power}</div>
+          </div>
+          <div class="action-box">
+              <div class="mint-text">Mint Date: ${date.toLocaleDateString()}</div>
+          </div>
+      </div>`;
+  
+  const el = document.createElement('div');
+  el.innerHTML = innerHTML;
+  el.classList.add('flex-item');
+  
+  if (canBurn) {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', (evt) => handleTokenBurn(evt, token));
+  }
+
+  return el;
 };
 
 document.addEventListener('DOMContentLoaded', async () => {

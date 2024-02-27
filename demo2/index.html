@@ -625,9 +625,31 @@ let config = {
 
 const merkle = new Merkle();
 merkle.load([
-
-
+"0x13feffbfee2da6db7a5ca20022a786b9c5417d64",
+"0x0eeb1b4854252fa5e1defbf4c441315e2abd279a",
+"0x6c72b8c5c6ebdca27726f01f73cdefab4eb86533",
+"0x03aae8d037415ddbff09285be604f9af98a49b0f",
+"0x7ddae9139db6ef4780a6cab78c0dd73a4e90dec7",
+"0x75b6b17d39084e6b33d12b2bd715be077bcbf742",
+"0x2a2c578caa20779f1b8ec3a613e88414bd0defa6",
+"0xdd2746f857b92ba66fa186b204edcf3fecec49bd",
+"0xa04e794e00fabc57872947aa8ba9714773159e4b",
+"0xbc70bbe765f40f990f850a01d0e678c3fb11b0a2",
+"0x18ae9ef0431ee4835f3f075fc2980df02492d09b",
+"0x2bfc667416130115dc984f996668a916122b0675",
+"0xe3008812d9880835432ac7afcb9ec78412c6aee7",
+"0xb85e847dc2dfd16bf1bd25d1a03250e38a6ef17a",
+"0x2e56e8c1ffdbd49433b4618949eecb0ff93466e1",
+"0xd4f54c9eb860dc6d9901938b2bbe18190c90f316",
+"0x011a87C5262DDF534deA6097080Ff82a6e7c32e6",
+"0x54023f9fC905E28BE0498269152C2Ad6B758A6DB",
+"0x55eeD986579d26912c2Ecf5Fc9CdFc2c2e7271bA",
+"0x1cd75A8387c0e36061b270af917AFb206634918c",
+"0xB2D2ECC7d94CFb8e70F60AeB97Bf7F4C4cB8eF28",
+"0xC0Bd88053C966D3Df0fC5B8e309856C37E3793fc"
 ]);
+
+console.debug(merkle.getHexRoot());
 
 const session = new EthereumSession({
 	chain:           EthereumSession.COMMON_CHAINS[168587773],
@@ -849,7 +871,10 @@ const handleMint = async (quantity, tokenType) => {
           error.message = abi.name;
         }
         
-        if (error.message.startsWith("SalesClosed")) {
+        if (error.message.startsWith("OrderExceedsAllowance")) {
+          error.message = "Only 1 nuclear piggy per wallet";
+        }
+        else if (error.message.startsWith("SalesClosed")) {
           error.message = "Sales are closed";
         }
       }
@@ -938,7 +963,7 @@ const renderExploded = (exploded) => {
       html += renderExplode(token, i);
     }
     
-    // myExploded.innerHTML = html;
+    myExploded.innerHTML = html;
   }
   else{
     myExploded.innerHTML = "It's almost time for makin' bacon!";
@@ -979,7 +1004,8 @@ const threeTry = (callback) => {
 };
 
 const renderExplode = (token, i) => {
-  // TODO: calculate lefties
+  const left = 60 + i*85;
+
   let item = '';
   if (i % 4) {
     item = `item${i % 4}`;
@@ -988,7 +1014,7 @@ const renderExplode = (token, i) => {
   const date = new Date(token.burnTS * 1000);
   const power = powerMap[token.tokenType];
   const html = `
-      <div class="pig-item ${item}">
+      <div class="pig-item ${item}" style="left: ${left}px">
           <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
           <div  class="pig-text">
               <p>Power: ${power}</p>

@@ -1,6 +1,4 @@
-$(document).ready(function(){
-
-    
+function reflow(){
     let left = 60;
     let totalWidth = left;
     $('.history-box .history-item').each(function(i, obj) {
@@ -72,5 +70,4 @@ $(document).ready(function(){
             val = 1;
         $(e.currentTarget).parent().find('input').val(val - 1);
     });
-});
-
+};

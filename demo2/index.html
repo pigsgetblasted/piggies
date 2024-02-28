@@ -166,7 +166,7 @@
         </section>
 
         <!-- Section3 -->
-        <section id="my-piggybombs-container" class="section">
+        <section id="section3" class="section">
             <div class="container">
                 <div class="section-overlay">
                     <div class="heading-box center">
@@ -293,7 +293,7 @@
         </section>
 
         <!-- Section4 -->
-        <section id="my-exploded-container" class="section">
+        <section id="section4" class="section">
             <div class="container">
                 <div class="heading-box center">
                     <div class="container short">
@@ -604,10 +604,22 @@
 <script>
 const epoch = 2177302;
 const powerMap = {
-  1: 'Nuclear',
-  2: 'Big',
-  3: 'Mid',
-  4: 'Low',
+  1: {
+    name: 'Nuclear',
+    image: 'images/pig_nuke.webp'
+  },
+  2: {
+    name: 'Big',
+    image: 'images/pig_big.webp'
+  },
+  3: {
+    name: 'Mid',
+    image: 'images/pig_mid.webp'
+  },
+  4: {
+    name: 'Low',
+    image: 'images/pig2.png'
+  }
 };
 
 let config = {
@@ -712,7 +724,6 @@ const handleConnect = async (evt, deep) => {
 	}
 }
 
-// TODO: refresh
 const handleConnected = async () => {
 	const allAccounts = await session.getWalletAccounts();
   if (!allAccounts?.length)
@@ -723,9 +734,10 @@ const handleConnected = async () => {
 	document.getElementById('connect-wallet').innerText = abbrev(currentAccount);
 
   const tmpConfig = await session.getContract().methods.getConfig().call();
-  config.burned = tmpConfig.burned;
+
   config.feePercent = BigInt(tmpConfig.feePercent);
   config.saleState = tmpConfig.saleState;
+  config.burned = tmpConfig.totalBurned;
   config.totalSupply = tmpConfig.totalSupply;
   config.prices[1] = BigInt(tmpConfig.prices[1]);
   config.prices[2] = BigInt(tmpConfig.prices[2]);
@@ -738,6 +750,7 @@ const handleConnected = async () => {
   const {exploded, tokens} = await getAccountTokens(currentAccount);
   renderTokens(tokens);
   renderExploded(exploded);
+  reflow();
 };
 
 const handleInit = async () => {
@@ -1004,20 +1017,13 @@ const threeTry = (callback) => {
 };
 
 const renderExplode = (token, i) => {
-  const left = 60 + i*85;
-
-  let item = '';
-  if (i % 4) {
-    item = `item${i % 4}`;
-  }
-
   const date = new Date(token.burnTS * 1000);
   const power = powerMap[token.tokenType];
   const html = `
-      <div class="pig-item ${item}" style="left: ${left}px">
-          <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
+      <div class="pig-item">
+          <div class="pig-image"><img src="${power.image}" alt="" /></div>
           <div  class="pig-text">
-              <p>Power: ${power}</p>
+              <p>Power: ${power.name}</p>
               <p>Exploded Date:</p>
               <p>${date.toLocaleDateString()}</p>
               <p>At ${date.toLocaleTimeString()}</p>
@@ -1027,14 +1033,14 @@ const renderExplode = (token, i) => {
   return html;
 };
 
-const renderToken = (token, canBurn) => {
+const renderToken = (token) => {
   const date = new Date(token.mintTS * 1000);
   const power = powerMap[token.tokenType];
   const innerHTML = `
       <div class="mint-item-box">
           <div class="image-box">
-              <img src="images/pig2.png" loading="lazy" alt="" class="full-image">
-              <div class="mint-label">Power: ${power}</div>
+              <img src="${power.image}" loading="lazy" alt="" class="full-image">
+              <div class="mint-label">Power: ${power.name}</div>
           </div>
           <div class="action-box">
               <div class="mint-text">Mint Date: ${date.toLocaleDateString()}</div>
@@ -1044,11 +1050,8 @@ const renderToken = (token, canBurn) => {
   const el = document.createElement('div');
   el.innerHTML = innerHTML;
   el.classList.add('flex-item');
-  
-  if (canBurn) {
-    el.style.cursor = 'pointer';
-    el.addEventListener('click', (evt) => handleTokenBurn(evt, token));
-  }
+  el.style.cursor = 'pointer';
+  el.addEventListener('click', (evt) => handleTokenBurn(evt, token));
 
   return el;
 };

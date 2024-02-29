@@ -409,16 +409,16 @@ const handleConnected = async () => {
 
   config.feePercent = BigInt(tmpConfig.feePercent);
   config.saleState = tmpConfig.saleState;
-  config.burned = tmpConfig.totalBurned;
-  config.totalSupply = tmpConfig.totalSupply;
+  config.burned = parseInt(tmpConfig.totalBurned, 10);
+  config.totalSupply = parseInt(tmpConfig.totalSupply, 10);
   config.prices[1] = BigInt(tmpConfig.prices[1]);
   config.prices[2] = BigInt(tmpConfig.prices[2]);
   config.prices[3] = BigInt(tmpConfig.prices[3]);
   config.prices[4] = BigInt(tmpConfig.prices[4]);
 
-  document.getElementById('burned').innerText = config.burned;
-  document.getElementById('total-supply').innerText = config.totalSupply;
-  document.getElementById('total-minted').innerText = config.totalBurned + config.totalSupply;
+  // document.getElementById('burned').innerText = config.burned;
+  // document.getElementById('total-supply').innerText = config.totalSupply;
+  document.getElementById('total-minted').innerText = config.burned + config.totalSupply;
 
   /*
   const saleStateEl = document.getElementById('sale-state');

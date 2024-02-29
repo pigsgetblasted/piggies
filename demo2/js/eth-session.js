@@ -909,6 +909,20 @@ EthereumSession.COMMON_CHAINS[11155111] = {
 EthereumSession.COMMON_CHAINS['0xaa36a7'] = EthereumSession.COMMON_CHAINS[11155111];
 
 
+EthereumSession.COMMON_CHAINS[81457] = {
+	chainName: 'Blast Mainnet',
+	chainId:   '0x13e31',
+	decimal:    81457,
+	rpcUrls: [
+		'https://rpc.blast.io',
+	],
+	blockExplorerUrls: [
+		'https://blastscan.io'
+	]
+};
+EthereumSession.COMMON_CHAINS['0x13e31'] = EthereumSession.COMMON_CHAINS[81457];
+
+
 EthereumSession.COMMON_CHAINS[168587773] = {
 	chainName: 'Blast-Sepolia Testnet',
 	chainId:   '0xa0c71fd',

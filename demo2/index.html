@@ -15,12 +15,7 @@
     
     <body class="body">
         <div id="toast-modal">
-          <div class="container"></div>
-          <div class="content">
-            <p>This is a test</p>
-            <p>This is a test</p>
-            <p>This is a test</p>
-          </div>
+          <div class="content"></div>
         </div>
     
         <div data-animation="over-right" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
@@ -287,8 +282,8 @@
                             </div>                            
                         </div>
                         <div class="title-box">
-                            <h3 class="heading__medium left">Game <span class="yellow">Status:</span> Active</h3>
-                            <h3 class="heading__medium right">Game <span class="yellow">Clock:</span> 90D 0H 0M</h3>
+                            <h3 class="heading__medium left">Game <span class="yellow">Status:</span> <span id="sale-state">Active</span></h3>
+                            <!-- <h3 class="heading__medium right">Game <span class="yellow">Clock:</span> 90D 0H 0M</h3> -->
                         </div>
     
                         <div class="flex-box"></div>
@@ -525,7 +520,7 @@
         </section>
 
         <!-- Section6 -->
-        <section class="section" id="section6">
+        <section class="section" id="section6" style="display: none;">
             <div class="container">
                 <div class="history-box">
                     <div class="history-box-wrapper">
@@ -755,6 +750,22 @@ const handleConnected = async () => {
 
   document.getElementById('burned').innerText = config.burned;
   document.getElementById('total-supply').innerText = config.totalSupply;
+  // TODO: total minted = config.totalBurned + config.totalSupply
+
+  const saleStateEl = document.getElementById('sale-state');
+  if (config.saleState === 0) {
+    saleState.innerText = 'Paused';
+  }
+  else if (config.saleState === 1) {
+    saleState.innerText = 'Low/Med/Big Active';
+  }
+  if (config.saleState === 2) {
+    saleState.innerText = 'Nukes Active';
+  }
+  if (config.saleState === 3) {
+    saleState.innerText = 'Active';
+  }
+
 
   const {exploded, tokens} = await getAccountTokens(currentAccount);
   renderTokens(tokens);

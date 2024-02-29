@@ -472,6 +472,7 @@ a.nav-action:hover {
 
 
 #toast-modal {
+  display: none;
   min-width: 300px;
   position: fixed;
   left: 1em;
@@ -480,20 +481,8 @@ a.nav-action:hover {
   z-index: 2000;
 }
 
-/*
-#toast-modal .container {
-  background: rgba(0, 0, 0, 0.8);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 2000;
-}
-*/
-
 #toast-modal .content {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
   border: 3px solid #fdb151;
   color: #fdb151;
   font-size: 1.2em;

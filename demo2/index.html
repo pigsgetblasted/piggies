@@ -14,6 +14,15 @@
     </head>
     
     <body class="body">
+        <div id="toast-modal">
+          <div class="container"></div>
+          <div class="content">
+            <p>This is a test</p>
+            <p>This is a test</p>
+            <p>This is a test</p>
+          </div>
+        </div>
+    
         <div data-animation="over-right" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
             <div class="navigation-container w-container">
                 <a href="#" class="w-nav-brand">
@@ -799,7 +808,7 @@ const handleMint = async (quantity, tokenType) => {
 
     let currentAccount;
     if (await handleConnect(null, true)) {
-    	const allAccounts = await session.getWalletAccounts();
+      const allAccounts = await session.getWalletAccounts();
       if (!allAccounts?.length) {
         alert('Please connect your wallet');
         return;      
@@ -850,13 +859,17 @@ const handleMint = async (quantity, tokenType) => {
       value: String(totalValueWithFees)
     });
 
+    const name = powerMap[tokenType].name;
+    const noun = quantity === '1' ? 'piggy' : 'piggies';
+    showModal('<p>Minting '+ quantity +' '+ name +' '+ noun +'...</p>');
+
     const txn = await session.getContract().methods.mint(quantity, tokenType, proof).send({
       from: currentAccount,
       gas: gasLimit,
       value: String(totalValueWithFees)
     });
 
-    alert("Congratulations! Mint successful, get ready to explode some piggies.");
+    showModal('<p>Congratulations!<br />Mint successful, get ready to explode some piggies.</p>', 5000);
     handleConnected();
   }
   catch (err) {
@@ -894,7 +907,7 @@ const handleMint = async (quantity, tokenType) => {
     }
 
     console.error(error);
-    alert(error.message);
+    showModal('<p>'+ error.message +'</p>', 5000);
   }
 };
 
@@ -923,12 +936,13 @@ const handleTokenBurn = async (evt, token) => {
       from: currentAccount,
     });
 
+    showModal('<p>Blasting...</p>');
     const txn = await session.getContract().methods.burn([token.tokenId]).send({
       from: currentAccount,
       gas: gasLimit
     });
 
-    alert("BOOM! Burn successful!");
+    showModal('<p>BOOM! Burn successful!</p>', 5000);
     handleConnected();
   }
   catch (err) {
@@ -956,14 +970,18 @@ const handleTokenBurn = async (evt, token) => {
           error.message = abi.name;
         }
         
-        if (error.message.startsWith("SalesClosed")) {
+        if (error.message.startsWith("ERC721NonexistentToken")) {
+          const tokenId = erorr.message.slice(23, -1);
+          error.message = "Token "+ tokenId +" is no longer assigned to your wallet";
+        }
+        else if (error.message.startsWith("SalesClosed")) {
           error.message = "Sales are closed";
         }
       }
     }
 
     console.error(error);
-    alert(error.message);
+    showModal('<p>'+ error.message +'</p>', 5000);
   }
 };
 
@@ -995,6 +1013,27 @@ const renderTokens = (tokens) => {
   }
   else{
     myPiggyBombs.innerHTML = "Get more piggies!";
+  }
+};
+
+const showModal = (content, timeout) => {
+  const modal = document.getElementById('toast-modal');
+  const contentEl = modal.querySelector('.content');
+  if (content) {
+    contentEl.innerHTML = content;
+    modal.style.display = 'block';
+
+    if (timeout) {
+      setTimeout(() => {
+        // TODO: fade
+        modal.style.display = 'none';
+        contentEl.innerHTML = '';
+      }, timeout);
+    }
+  }
+  else {
+    modal.style.display = 'none';
+    contentEl.innerHTML = '';
   }
 };
 

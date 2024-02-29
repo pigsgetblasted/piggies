@@ -11,6 +11,33 @@
         <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
         <link rel="manifest" href="../site.webmanifest">
+<script>
+          // Set the future date and time to count down to
+          const countdownDate = new Date("2024-03-01T12:00:00").getTime();
+          
+          // Update the countdown every second
+          const countdown = setInterval(function() {
+            // Get the current date and time
+            const now = new Date().getTime();
+            
+            // Calculate the remaining time in milliseconds
+            const distance = countdownDate - now;
+            
+            // Calculate days, hours, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the countdown
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + seconds + "s ";
+            
+            // If the countdown is finished, display a message
+            if (distance < 0) {
+              clearInterval(countdown);
+              document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+          }, 1000); // Update every second
+          </script>	    
     </head>
     
     <body class="body">
@@ -77,7 +104,10 @@
             <div class="heading-box center">
                 <div class="container short">
                     <h2 class="section__heading">Mint <span class="yellow">Piggybombs.</span> </h2>
-                    <div class="section__subheading">Reminder: All ETH is <span class="yellow">refunded</span> after exploding <span class="yellow">your PIGGYBOMB.</span></div>
+                    <div class="section__subheading">Reminder: ETH is Refundable Minus Mint Fee</div>
+                    <div class="section__subheading">Total Minted: <span class="yellow">3218</span></div>
+                    <div class="section__subheading">Mint Fee: <span class="yellow">5%</span></div>
+                    <div class="section__subheading">Mint Fee Increasing In: <span class="yellow" id="countdown"></span>
                 </div>
             </div>
             <div class="content-box dots">
@@ -148,16 +178,8 @@
                             <div class="image-box">
                                 <img src="images/pig_nuke.webp" loading="lazy" alt="" class="full-image">
                                 <div class="mint-qty">
-                                    <div class="mint-qty-input">
-                                        <button class="minus-btn">
-                                            <img src="images/minus.png" alt="" />                                            
-                                        </button>
-                                        <input type="number" id="quantity-nuclear" name="qty" value="1" min="1" max="1" step="1" />
-                                        <button class="plus-btn">
-                                            <img src="images/plus.png" alt="" />                                            
-                                        </button>
-                                    </div>
-                                    <div class="mint-label">Nuke Power <span>-0.10</span></div>
+                                    
+                                    <div class="mint-label">Nuclear <span>-0.10</span></div>
                                 </div>
                             </div>
                             <div class="action-box">
@@ -179,107 +201,7 @@
                     </div>
                     <div class="content-box">
                         <div id="my-piggybombs" class="flex">
-                            <div class="flex-item">
-                                <div class="mint-item-box">
-                                    <div class="image-box">
-                                        <img src="images/pig2.png" loading="lazy" alt="" class="full-image">
-                                        <div class="mint-label">Power: Low</div>
-                                    </div>
-                                    <div class="action-box">
-                                        <div class="mint-text">Mint Date: 03/12/24</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-item">
-                                <div class="mint-item-box">
-                                    <div class="image-box">
-                                        <img src="images/pig2.png" loading="lazy" alt="" class="full-image">
-                                        <div class="mint-label">Power: Low</div>
-                                    </div>
-                                    <div class="action-box">
-                                        <div class="mint-text">Mint Date: 03/12/24</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-item">
-                                <div class="mint-item-box">
-                                    <div class="image-box">
-                                        <img src="images/pig2.png" loading="lazy" alt="" class="full-image">
-                                        <div class="mint-label">Power: Low</div>
-                                    </div>
-                                    <div class="action-box">
-                                        <div class="mint-text">Mint Date: 03/12/24</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex-item">
-                                <div class="mint-item-box">
-                                    <div class="image-box">
-                                        <img src="images/pig2.png" loading="lazy" alt="" class="full-image">
-                                        <div class="mint-label">Power: Low</div>
-                                    </div>
-                                    <div class="action-box">
-                                        <div class="mint-text">Mint Date: 03/12/24</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-item">
-                                <div class="mint-item-box">
-                                    <div class="image-box">
-                                        <img src="images/pig_mid.webp" loading="lazy" alt="" class="full-image">
-                                        <div class="mint-label">Power: Mid</div>
-                                    </div>
-                                    <div class="action-box">
-                                        <div class="mint-text">Mint Date: 03/15/24</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-item">
-                                <div class="mint-item-box">
-                                    <div class="image-box">
-                                        <img src="images/pig_mid.webp" loading="lazy" alt="" class="full-image">
-                                        <div class="mint-label">Power: Mid</div>
-                                    </div>
-                                    <div class="action-box">
-                                        <div class="mint-text">Mint Date: 03/15/24</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex-item">
-                                <div class="mint-item-box">
-                                    <div class="image-box">
-                                        <img src="images/pig2.png" loading="lazy" alt="" class="full-image">
-                                        <div class="mint-label">Power: Mid</div>
-                                    </div>
-                                    <div class="action-box">
-                                        <div class="mint-text">Mint Date: 03/18/24</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-item">
-                                <div class="mint-item-box">
-                                    <div class="image-box">
-                                        <img src="images/pig_nuke.webp" loading="lazy" alt="" class="full-image">
-                                        <div class="mint-label">Power: Nuclear</div>
-                                    </div>
-                                    <div class="action-box">
-                                        <div class="mint-text">Mint Date: 04/12/24</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-item">
-                                <div class="mint-item-box">
-                                    <div class="image-box">
-                                        <img src="images/pig_big.webp" loading="lazy" alt="" class="full-image">
-                                        <div class="mint-label">Power: Big</div>
-                                    </div>
-                                    <div class="action-box">
-                                        <div class="mint-text">Mint Date: 04/15/24</div>
-                                    </div>
-                                </div>
-                            </div>                            
+                                                  
                         </div>
                         <div class="title-box">
                             <h3 class="heading__medium left">Game <span class="yellow">Status:</span> <span id="sale-state">Active</span></h3>
@@ -308,274 +230,11 @@
                 <div class="content-box">
                     <div class="pigs-box">
                         <div id="my-exploded" class="pigs-box-wrapper">
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                  <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                     <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                 <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                   <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                 <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                    <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                     <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                   <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                   <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                   <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                 <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                              <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                  <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                               <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
-                            <div class="pig-item">
-                                <div class="pig-image"><img src="images/smallPig.png" alt="" /></div>
-                                     <div  class="pig-text">
-                                    <p>Power: Low</p>
-                                    <p>Exploded Date:</p>
-                                    <p>03/15/24</p>
-                                    <p>At 11:23 pm</p>
-                                </div>
-                            </div>
+                            
 
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Section5 -->
-        <section class="section" id="section5">
-            <div class="container">
-                <div class="heading-box center">
-                    <h2 class="section__heading">Community <span class="yellow">Explosions.</span></h2>
-                </div>
-                <div class="content-box">
-                    <div class="heading-grid">
-                        <div class="grid-image"><img src="images/VerticalLine.png" alt="" /></div>
-                        <div class="heading-grid-left-item">
-                            <h3 class="section__subheading1">Exploded<br/><span class="yellow">Bombs:</span></h3>
-                            <div id="burned" class="section__number">-1</div>
-                            <p class="section__paragraph">(18 nuclear,<br>325 large,<br>15 medium,<br>8 small)</p>
-                        </div>
-                        <div class="heading-grid-right-item">
-                            <h3 class="section__subheading1">Unexploded<br/><span class="yellow">Bombs:</span></h3>
-                            <div id="total-supply" class="section__number">-1</div>
-                            <p class="section__paragraph">(58 nuclear,<br>900 large,<br>11 medium,<br>200 small)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section6 -->
-        <section class="section" id="section6" style="display: none;">
-            <div class="container">
-                <div class="history-box">
-                    <div class="history-box-wrapper">
-                        <div class="history-line-box"><div class="history-line"></div></div>
-                        
-                        <div class="history-item">
-                            <h3>March 1</h3>
-                            <h4>15 explosions</h4>
-                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
-                        </div>
-        
-                        <div class="history-item">
-                            <h3>March 2</h3>
-                            <h4>15 explosions</h4>
-                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
-                        </div>
-        
-                        <div class="history-item">
-                            <h3>March 3</h3>
-                            <h4>15 explosions</h4>
-                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
-                        </div>
-                        <div class="history-item">
-                            <h3>March 4</h3>
-                            <h4>15 explosions</h4>
-                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
-                        </div>
-        
-                        <div class="history-item">
-                            <h3>March 5</h3>
-                            <h4>15 explosions</h4>
-                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
-                        </div>
-        
-                        <div class="history-item">
-                            <h3>March 6</h3>
-                            <h4>15 explosions</h4>
-                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
-                        </div>      
-                        
-                        <div class="history-item">
-                            <h3>March 7</h3>
-                            <h4>15 explosions</h4>
-                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
-                        </div> 
-
-                        <div class="history-item">
-                            <h3>March 8</h3>
-                            <h4>15 explosions</h4>
-                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
-                        </div> 
-                    </div>
-                </div>
-
-
             </div>
         </section>
 

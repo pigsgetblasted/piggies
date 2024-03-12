@@ -104,6 +104,18 @@ if (countdownEl) {
 #pledges .submit-button:hover {
     background-color: #ccc;
 }
+
+#toast-modal p.title {
+}
+
+#toast-modal p.piggie {
+  margin: 1em;
+}
+
+#toast-modal p.tweet a{
+  color: white;
+  font-size: 1.2em;
+}
 </style>
 </head>   
 <body class="body">
@@ -493,19 +505,19 @@ const names = {
 const powerMap = {
   1: {
     name: 'Nuclear',
-    image: 'images/pig_nuke.webp'
+    image: '/images/pig_nuke.webp'
   },
   2: {
     name: 'Big',
-    image: 'images/pig_big.webp'
+    image: '/images/pig_big.webp'
   },
   3: {
     name: 'Mid',
-    image: 'images/pig_mid.webp'
+    image: '/images/pig_mid.webp'
   },
   4: {
     name: 'Low',
-    image: 'images/pig2.webp'
+    image: '/images/pig2.webp'
   }
 };
 
@@ -2115,38 +2127,38 @@ const handleTokenBurn = async (evt, token) => {
     let html;
     switch (token.tokenType) {
       case 1:
-        html = '<p>BOOM! Burn successful!</p>'
-          +'<h2>NUCLEAR POWER:</h2>'
-          +'<p><img src="https://pigsgetblasted.com/images/Pig_nuclear.gif" style="width:350px"></p>'
-          +'<p><a href="https://twitter.com/intent/tweet?text=I%20am%20become%20death%2C%20destroyer%20of%20worlds.%20Just%20exploded%20a%20nuclear%20PiggyBomb.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766801755922720%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
+        html = '<p class="title">BOOM! Burn successful!</p>'
+          // +'<h2>NUCLEAR POWER:</h2>'
+          +'<p class="piggie"><img src="https://pigsgetblasted.com/images/Pig_nuclear.gif" style="width:350px"></p>'
+          +'<p class="tweet"><a href="https://twitter.com/intent/tweet?text=I%20am%20become%20death%2C%20destroyer%20of%20worlds.%20Just%20exploded%20a%20nuclear%20PiggyBomb.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766801755922720%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
 
         showModal(html, 15_000);
         break;
 
       case 2:
-        html = '<p>BOOM! Burn successful!</p>'
-          +'<h2>HIGH POWER:</h2>'
-          +'<p><img src="https://pigsgetblasted.com/images/Pig_big.gif" style="width:350px"></p>'
-          +'<p><a href="https://twitter.com/intent/tweet?text=KABOOM!%20Just%20exploded%20a%20high-power%20PiggyBomb.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766799742656547%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
+        html = '<p class="title">BOOM! Burn successful!</p>'
+          // +'<h2>HIGH POWER:</h2>'
+          +'<p class="piggie"><img src="https://pigsgetblasted.com/images/Pig_big.gif" style="width:350px"></p>'
+          +'<p class="tweet"><a href="https://twitter.com/intent/tweet?text=KABOOM!%20Just%20exploded%20a%20high-power%20PiggyBomb.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766799742656547%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
 
         showModal(html, 15_000);
         break;
 
       case 3:
-        html = '<p>BOOM! Burn successful!</p>'
-          +'<h2>MEDIUM POWER:</h2>'
-          +'<p><img src="https://pigsgetblasted.com/images/Pig_mid.gif" style="width:350px"></p>'
-          +'<p><a href="https://twitter.com/intent/tweet?text=Exploded%20a%20medium-power%20PiggyBomb%20with%20intention.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766797809123786%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
+        html = '<p class="title">BOOM! Burn successful!</p>'
+          // +'<h2>MEDIUM POWER:</h2>'
+          +'<p class="piggie"><img src="https://pigsgetblasted.com/images/Pig_mid.gif" style="width:350px"></p>'
+          +'<p class="tweet"><a class="" href="https://twitter.com/intent/tweet?text=Exploded%20a%20medium-power%20PiggyBomb%20with%20intention.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766797809123786%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
 
         showModal(html, 15_000);
         break;
 
       case 4:
-        html = '<p>BOOM! Burn successful!</p>'
-          +'<h1>LOW POWER:</h2>'
-          +'<p><img src="/images/Pig_low.gif" style="width:350px"></p>'
-          +'<p><a href="https://twitter.com/intent/tweet?text=Casually%20exploded%20a%20low-power%20PiggyBomb.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766796110422488%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
-        showModal(html, 5000);
+        html = '<p class="title">BOOM! Burn successful!</p>'
+          // +'<h2>LOW POWER:</h2>'
+          +'<p class="piggie"><img src="/images/Pig_low.gif" style="width:350px"></p>'
+          +'<p class="tweet"><a href="https://twitter.com/intent/tweet?text=Casually%20exploded%20a%20low-power%20PiggyBomb.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766796110422488%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
+        showModal(html, 15_000);
         break;
 
       default:

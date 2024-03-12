@@ -1758,7 +1758,8 @@ merkle.load([
 "0xc1da309f85ed397a942f9bf212cdd63110e61515",
 "0x9868f736E93ad29D2a30F2E85d12b3aC4c3225b8",
 "0xDEA905720864ddF6a0D47DB731235075107abA05",
-"0x25c59677f83CC6d0b7Af2159aF6b8b873b5FA4ce"
+"0x25c59677f83CC6d0b7Af2159aF6b8b873b5FA4ce",
+"0x4D8cd0D84E677cD2E13C29C75D7673FeD94a14Bf"
 ]);
 
 console.debug(merkle.getHexRoot());
@@ -1879,9 +1880,9 @@ const handleInit = async () => {
 	try{
 		await handleConnect();
 
-    const explosions = await getRecentExplosions(5);
-    renderRecentExplosions(explosions);
-    reflow();
+		const explosions = await getRecentExplosions(5);
+		renderRecentExplosions(explosions);
+		reflow();
 	}
 	catch(err){
 		console.warn({ err });
@@ -2118,11 +2119,11 @@ const handleTokenBurn = async (evt, token) => {
       from: currentAccount,
     });
 
-    // showModal('<p>Blasting...</p>');
-    // const txn = await session.getContract().methods.burn([token.tokenId]).send({
-    //   from: currentAccount,
-    //   gas: gasLimit
-    // });
+    showModal('<p>Blasting...</p>');
+    const txn = await session.getContract().methods.burn([token.tokenId]).send({
+      from: currentAccount,
+      gas: gasLimit
+    });
 
     let html;
     switch (token.tokenType) {

@@ -42,7 +42,7 @@ if (countdownEl) {
 }
 </script>
 <style>
-#section5 .form-container {
+#pledges .form-container {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -50,21 +50,21 @@ if (countdownEl) {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#section5 .form-group {
+#pledges .form-group {
     margin-bottom: 20px;
 }
 
-#section5 .form-group label {
+#pledges .form-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-#section5 .dropdown {
+#pledges .dropdown {
     position: relative;
 }
 
-#section5 .dropdown-select {
+#pledges .dropdown-select {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -76,12 +76,12 @@ if (countdownEl) {
     cursor: pointer;
 }
 
-#section5 .dropdown-select:focus {
+#pledges .dropdown-select:focus {
     outline: none;
     border-color: #66afe9;
 }
 
-#section5 .dropdown-arrow {
+#pledges .dropdown-arrow {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -89,7 +89,7 @@ if (countdownEl) {
     pointer-events: none;
 }
 
-#section5 .submit-button {
+#pledges .submit-button {
     width: 100%;
     padding: 10px;
     background-color: #fdb151;
@@ -101,8 +101,20 @@ if (countdownEl) {
     transition: background-color 0.3s;
 }
 
-#section5 .submit-button:hover {
+#pledges .submit-button:hover {
     background-color: #ccc;
+}
+
+#toast-modal p.title {
+}
+
+#toast-modal p.piggie {
+  margin: 1em;
+}
+
+#toast-modal p.tweet a{
+  color: white;
+  font-size: 1.2em;
 }
 </style>
 </head>   
@@ -310,8 +322,8 @@ if (countdownEl) {
         </section>
 
 
-        <!-- Section5 -->
-        <section id="section5" class="section">
+        <!-- pledges -->
+        <section id="pledges" class="section">
             <div class="container">
                 <div class="heading-box center">
                     <div class="container short">
@@ -347,6 +359,98 @@ if (countdownEl) {
         </section>
 
 
+        <!-- Section5 -->
+        <section id="section5" class="section" style="display: none;">
+            <div class="container">
+                <div class="heading-box center">
+                    <h2 class="section__heading">Current <span class="yellow">Explosions.</span></h2>
+                </div>
+                <div class="content-box">
+                    <div class="heading-grid">
+                        <div class="grid-image"><img src="images/VerticalLine.png" alt="" /></div>
+                        <div class="heading-grid-left-item">
+                            <h3 class="section__subheading1">Unexploded<br/><span class="yellow">Bombs:</span></h3>
+                            <div id="total-burned" class="section__number">...</div>
+                            <!--
+                            <p class="section__paragraph">(18 nuclear,<br>325 large,<br>15 medium,<br>8 small)</p>
+                            -->
+                        </div>
+                        <div class="heading-grid-right-item">
+                            <h3 class="section__subheading1">Unexploded<br/><span class="yellow">Bombs:</span></h3>
+                            <div id="total-supply" class="section__number">...</div>
+                            <!--
+                            <p class="section__paragraph">(58 nuclear,<br>900 large,<br>11 medium,<br>200 small)</p>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section6 -->
+        <section id="section6" class="section" style="display: none;">
+            <div class="container">
+                <div class="heading-box center" style="margin-bottom: 5em;">
+                    <h2 class="section__heading">Community <span class="yellow">Explosions.</span></h2>
+                </div>
+                <div class="history-box">
+                    <div id="history-items" class="history-box-wrapper">
+                        <div class="history-line-box"><div class="history-line"></div></div>
+                        
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div>
+        
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div>
+        
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div>
+
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div>
+        
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div>
+        
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div>      
+                        
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div> 
+
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
         <!-- Section7 -->
         <section class="section" id="section7">
             <div class="container">
@@ -375,29 +479,52 @@ if (countdownEl) {
         <script type="text/javascript" src="/js/eth-session.js"></script>
 <script>
 const epoch = 2177302;
+
+const months = {
+  '01': 'January',
+  '02': 'February',
+  '03': 'March',
+  '04': 'April',
+  '05': 'May',
+  '06': 'June',
+  '07': 'July',
+  '08': 'August',
+  '09': 'September',
+  '10': 'October',
+  '11': 'November',
+  '12': 'December'
+};
+
+const names = {
+  1: 'nuclear',
+  2: 'large',
+  3: 'medium',
+  4: 'small'
+};
+
 const powerMap = {
   1: {
     name: 'Nuclear',
-    image: 'images/pig_nuke.webp'
+    image: '/images/pig_nuke.webp'
   },
   2: {
     name: 'Big',
-    image: 'images/pig_big.webp'
+    image: '/images/pig_big.webp'
   },
   3: {
     name: 'Mid',
-    image: 'images/pig_mid.webp'
+    image: '/images/pig_mid.webp'
   },
   4: {
     name: 'Low',
-    image: 'images/pig2.webp'
+    image: '/images/pig2.webp'
   }
 };
 
 let config = {
-  burned: -1,
   feePercent: BigInt(5),
   saleState: 0,
+  totalBurned: -1,
   totalSupply: -1,
   prices: {
     1: BigInt('100000000000000'),
@@ -1682,6 +1809,16 @@ const getAccountTokens = async (currentAccount) => {
   return {exploded, tokens};
 };
 
+const getRecentExplosions = async (quantity) => {
+  const res = await fetch(`https://piggies.herodevelopment.com/stats?quantity=${quantity}`);
+  if (res.ok) {
+    return res.json();
+  }
+  else {
+    return [];
+  }
+}
+
 const handleConnect = async (evt, deep) => {
 	if (evt?.cancelable)
 		evt?.preventDefault();
@@ -1700,7 +1837,7 @@ const handleConnect = async (evt, deep) => {
 	// }
 
 	if (await session.connectWeb3(deep)) {
-		handleConnected();
+		await handleConnected();
 		return true;
 	}
 	else{
@@ -1721,43 +1858,31 @@ const handleConnected = async () => {
 
   config.feePercent = BigInt(tmpConfig.feePercent);
   config.saleState = tmpConfig.saleState;
-  config.burned = parseInt(tmpConfig.totalBurned, 10);
+  config.totalBurned = parseInt(tmpConfig.totalBurned, 10);
   config.totalSupply = parseInt(tmpConfig.totalSupply, 10);
   config.prices[1] = BigInt(tmpConfig.prices[1]);
   config.prices[2] = BigInt(tmpConfig.prices[2]);
   config.prices[3] = BigInt(tmpConfig.prices[3]);
   config.prices[4] = BigInt(tmpConfig.prices[4]);
 
-  // document.getElementById('burned').innerText = config.burned;
+  document.getElementById('total-minted').innerText = config.totalBurned + config.totalSupply;
+
+  // document.getElementById('total-burned').innerText = config.totalBurned;
   // document.getElementById('total-supply').innerText = config.totalSupply;
-  document.getElementById('total-minted').innerText = config.burned + config.totalSupply;
-
-  /*
-  const saleStateEl = document.getElementById('sale-state');
-  if (config.saleState === 0) {
-    saleState.innerText = 'Paused';
-  }
-  else if (config.saleState === 1) {
-    saleState.innerText = 'Low/Med/Big Active';
-  }
-  if (config.saleState === 2) {
-    saleState.innerText = 'Nukes Active';
-  }
-  if (config.saleState === 3) {
-    saleState.innerText = 'Active';
-  }
-  */
-
+  // document.getElementById('section5').style.display = 'block';
 
   const {exploded, tokens} = await getAccountTokens(currentAccount);
   renderTokens(tokens);
   renderExploded(exploded);
-  reflow();
 };
 
 const handleInit = async () => {
 	try{
 		await handleConnect();
+
+		const explosions = await getRecentExplosions(5);
+		renderRecentExplosions(explosions);
+		reflow();
 	}
 	catch(err){
 		console.warn({ err });
@@ -2000,7 +2125,48 @@ const handleTokenBurn = async (evt, token) => {
       gas: gasLimit
     });
 
-    showModal('<p>BOOM! Burn successful!</p>', 5000);
+    let html;
+    switch (token.tokenType) {
+      case 1:
+        html = '<p class="title">BOOM! Burn successful!</p>'
+          // +'<h2>NUCLEAR POWER:</h2>'
+          +'<p class="piggie"><img src="https://pigsgetblasted.com/images/Pig_nuclear.gif" style="width:350px"></p>'
+          +'<p class="tweet"><a href="https://twitter.com/intent/tweet?text=I%20am%20become%20death%2C%20destroyer%20of%20worlds.%20Just%20exploded%20a%20nuclear%20PiggyBomb.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766801755922720%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
+
+        showModal(html, 15_000);
+        break;
+
+      case 2:
+        html = '<p class="title">BOOM! Burn successful!</p>'
+          // +'<h2>HIGH POWER:</h2>'
+          +'<p class="piggie"><img src="https://pigsgetblasted.com/images/Pig_big.gif" style="width:350px"></p>'
+          +'<p class="tweet"><a href="https://twitter.com/intent/tweet?text=KABOOM!%20Just%20exploded%20a%20high-power%20PiggyBomb.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766799742656547%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
+
+        showModal(html, 15_000);
+        break;
+
+      case 3:
+        html = '<p class="title">BOOM! Burn successful!</p>'
+          // +'<h2>MEDIUM POWER:</h2>'
+          +'<p class="piggie"><img src="https://pigsgetblasted.com/images/Pig_mid.gif" style="width:350px"></p>'
+          +'<p class="tweet"><a class="" href="https://twitter.com/intent/tweet?text=Exploded%20a%20medium-power%20PiggyBomb%20with%20intention.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766797809123786%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
+
+        showModal(html, 15_000);
+        break;
+
+      case 4:
+        html = '<p class="title">BOOM! Burn successful!</p>'
+          // +'<h2>LOW POWER:</h2>'
+          +'<p class="piggie"><img src="/images/Pig_low.gif" style="width:350px"></p>'
+          +'<p class="tweet"><a href="https://twitter.com/intent/tweet?text=Casually%20exploded%20a%20low-power%20PiggyBomb.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766796110422488%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
+        showModal(html, 15_000);
+        break;
+
+      default:
+        showModal('<p>BOOM! Burn successful!</p>', 5000);
+        break;
+    }
+
     handleConnected();
   }
   catch (err) {
@@ -2129,6 +2295,49 @@ const renderExplode = (token, i) => {
 
   return html;
 };
+
+const renderRecentExplosions = (explosions) => {
+  if (explosions.length == 0)
+    return;
+
+  const container = document.getElementById('history-items');
+  if (!container)
+    return;
+
+
+  container.innerHTML = '<div class="history-line-box"><div class="history-line"></div></div>';
+
+  for (let exp of explosions) {
+    const item = document.createElement('div');
+    item.classList.add('history-item');
+    
+    let [y, m, d] = exp.date.split('-');
+    d = parseInt(d, 10);
+
+    const h3 = document.createElement('h3');
+    h3.innerText = `${months[m]} ${d}`;
+    item.appendChild(h3);
+    
+    const h4 = document.createElement('h4');
+    h4.innerText = `${exp.total} explosions`;
+    item.appendChild(h4);
+
+    const counts = [];
+    for (let i = 1; i < 5; ++i) {
+      if (exp[i]) {
+        counts.push(`${exp[i]} ${names[i]}`);
+      }
+    }
+
+    const p = document.createElement('p');
+    p.innerText = '('+ counts.join(', ') +')';
+    item.appendChild(p);
+
+    container.appendChild(item);
+  }
+  
+  document.getElementById('section6').style.display = 'block';
+}
 
 const renderToken = (token) => {
   const date = new Date(token.mintTS * 1000);

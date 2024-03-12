@@ -348,8 +348,7 @@ if (countdownEl) {
 
 
         <!-- Section5 -->
-        <!--
-        <section id="section5" class="section">
+        <section id="section5" class="section" style="display: none;">
             <div class="container">
                 <div class="heading-box center">
                     <h2 class="section__heading">Current <span class="yellow">Explosions.</span></h2>
@@ -359,19 +358,22 @@ if (countdownEl) {
                         <div class="grid-image"><img src="images/VerticalLine.png" alt="" /></div>
                         <div class="heading-grid-left-item">
                             <h3 class="section__subheading1">Unexploded<br/><span class="yellow">Bombs:</span></h3>
-                            <div class="section__number">993</div>
+                            <div id="total-burned" class="section__number">...</div>
+                            <!--
                             <p class="section__paragraph">(18 nuclear,<br>325 large,<br>15 medium,<br>8 small)</p>
+                            -->
                         </div>
                         <div class="heading-grid-right-item">
                             <h3 class="section__subheading1">Unexploded<br/><span class="yellow">Bombs:</span></h3>
-                            <div class="section__number">2000</div>
+                            <div id="total-supply" class="section__number">...</div>
+                            <!--
                             <p class="section__paragraph">(58 nuclear,<br>900 large,<br>11 medium,<br>200 small)</p>
+                            -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        -->
 
         <!-- Section6 -->
         <section id="section6" class="section" style="display: none;">
@@ -505,9 +507,9 @@ const powerMap = {
 };
 
 let config = {
-  burned: -1,
   feePercent: BigInt(5),
   saleState: 0,
+  totalBurned: -1,
   totalSupply: -1,
   prices: {
     1: BigInt('100000000000000'),
@@ -1819,7 +1821,7 @@ const handleConnect = async (evt, deep) => {
 	// }
 
 	if (await session.connectWeb3(deep)) {
-		handleConnected();
+		await handleConnected();
 		return true;
 	}
 	else{
@@ -1840,30 +1842,31 @@ const handleConnected = async () => {
 
   config.feePercent = BigInt(tmpConfig.feePercent);
   config.saleState = tmpConfig.saleState;
-  config.burned = parseInt(tmpConfig.totalBurned, 10);
+  config.totalBurned = parseInt(tmpConfig.totalBurned, 10);
   config.totalSupply = parseInt(tmpConfig.totalSupply, 10);
   config.prices[1] = BigInt(tmpConfig.prices[1]);
   config.prices[2] = BigInt(tmpConfig.prices[2]);
   config.prices[3] = BigInt(tmpConfig.prices[3]);
   config.prices[4] = BigInt(tmpConfig.prices[4]);
 
-  // document.getElementById('burned').innerText = config.burned;
+  document.getElementById('total-minted').innerText = config.totalBurned + config.totalSupply;
+
+  // document.getElementById('total-burned').innerText = config.totalBurned;
   // document.getElementById('total-supply').innerText = config.totalSupply;
-  document.getElementById('total-minted').innerText = config.burned + config.totalSupply;
+  // document.getElementById('section5').style.display = 'block';
 
   const {exploded, tokens} = await getAccountTokens(currentAccount);
   renderTokens(tokens);
-  renderExploded(exploded);  
-  
-  const explosions = await getRecentExplosions(5);
-  renderRecentExplosions(explosions);
-
-  reflow();
+  renderExploded(exploded);
 };
 
 const handleInit = async () => {
 	try{
 		await handleConnect();
+
+    const explosions = await getRecentExplosions(5);
+    renderRecentExplosions(explosions);
+    reflow();
 	}
 	catch(err){
 		console.warn({ err });

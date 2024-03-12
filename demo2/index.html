@@ -378,6 +378,9 @@ if (countdownEl) {
         <!-- Section6 -->
         <section id="section6" class="section" style="display: none;">
             <div class="container">
+                <div class="heading-box center" style="margin-bottom: 5em;">
+                    <h2 class="section__heading">Community <span class="yellow">Explosions.</span></h2>
+                </div>
                 <div class="history-box">
                     <div id="history-items" class="history-box-wrapper">
                         <div class="history-line-box"><div class="history-line"></div></div>
@@ -2240,6 +2243,9 @@ const renderExplode = (token, i) => {
 };
 
 const renderRecentExplosions = (explosions) => {
+  if (explosions.length == 0)
+    return;
+
   const container = document.getElementById('history-items');
   if (!container)
     return;

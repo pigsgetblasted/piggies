@@ -15,7 +15,7 @@
 const countdownEl = document.getElementById("countdown");
 if (countdownEl) {
   // Set the future date and time to count down to
-  const countdownDate = new Date("2024-03-05T12:00:00-05:00").getTime();
+  const countdownDate = new Date("2024-03-31T12:00:00-05:00").getTime();
   
   // Update the countdown every second
   const countdown = setInterval(function() {
@@ -191,6 +191,7 @@ if (countdownEl) {
                     <div class="section__subheading">ETH is Refundable Minus 5% Mint Fee</div>
                     <div class="section__subheading">Total Minted: <span id="total-minted" class="yellow">...</span></div>
                     <div class="section__subheading">Bombs minted today yield more than bombs minted tomorrow.</div>
+                    <div class="section__subheading">Big Bombs mint ending in <span id="countdown"></span></div>
                 </div>
             </div>
             <div class="content-box dots">

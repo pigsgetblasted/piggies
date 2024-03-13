@@ -12,6 +12,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="manifest" href="../site.webmanifest">
 <script>
+	    document.addEventListener("DOMContentLoaded", function() {
+
 const countdownEl = document.getElementById("countdown");
 if (countdownEl) {
   // Set the future date and time to count down to
@@ -40,6 +42,7 @@ if (countdownEl) {
     }
   }, 1000); // Update every second
 }
+	    });
 </script>
 <style>
 #pledges .form-container {

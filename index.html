@@ -13,37 +13,42 @@
     <link rel="manifest" href="../site.webmanifest">
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-	
-const countdownEl = document.getElementById("countdown");
-if (countdownEl) {
-  // Set the future date and time to count down to
-  const countdownDate = new Date("2024-03-27T12:00:00-05:00").getTime();
+  const countdownEl = document.getElementById("countdown");
+  if (countdownEl) {
+    // Set the future date and time to count down to
+    const countdownDate = new Date("2024-03-27T12:00:00-05:00").getTime();
   
-  // Update the countdown every second
-  const countdown = setInterval(function() {
-    // Get the current date and time
-    const now = new Date().getTime();
+    // Update the countdown every second
+    const countdown = setInterval(function() {
+      // Get the current date and time
+      const now = new Date().getTime();
     
-    // Calculate the remaining time in milliseconds
-    const distance = countdownDate - now;
+      // Calculate the remaining time in milliseconds
+      const distance = countdownDate - now;
     
-    // Calculate days, hours, and seconds
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      // Calculate days, hours, and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    // Display the countdown
-    countdownEl.innerHTML = days + "d " + hours + "h " + seconds + "s ";
+      // Display the countdown
+      countdownEl.innerHTML = days + "d " + hours + "h " + seconds + "s ";
     
-    // If the countdown is finished, display a message
-    if (distance < 0) {
-      clearInterval(countdown);
-      countdownEl.innerHTML = "EXPIRED";
-    }
-  }, 1000); // Update every second
-}});
+      // If the countdown is finished, display a message
+      if (distance < 0) {
+        clearInterval(countdown);
+        countdownEl.innerHTML = "EXPIRED";
+      }
+    }, 1000); // Update every second
+  }
+});
 </script>
 <style>
+#connect-wallet small {
+  font-size: 0.65em;
+  font-weight: 500;
+}
+
 #pledges .form-container {
     max-width: 400px;
     margin: 50px auto;
@@ -193,8 +198,7 @@ if (countdownEl) {
                     <div class="section__subheading">ETH is <span class="yellow">Refundable</span> Minus 5% Mint Fee</div>
                     <div class="section__subheading">Total Minted: <span id="total-minted" class="yellow">...</span></div>
                     <div class="section__subheading">Bombs minted today yield more than bombs minted tomorrow.</div>
-		    <div class="section__subheading">Big Bombs mint ending in <span class="yellow"><span id="countdown"></span></span></div>
-
+                    <div class="section__subheading">Big Bombs mint ending in <span class="yellow"><span id="countdown"></span></span></div>
                 </div>
             </div>
             <div class="content-box dots">
@@ -573,6 +577,16 @@ const formatToken = (token, tokenId) => ({
   value: BigInt(token.value)
 });
 
+const getAccountPledge = async (currentAccount) => {
+  const res = await fetch(`https://piggies.herodevelopment.com/pledge?account=${currentAccount}`);
+  if (res.ok) {
+    return res.json();
+  }
+  else {
+    return [];
+  }
+};
+
 const getAccountTokens = async (currentAccount) => {
   const explodeIds = await session.getContract().methods.burnedOfOwner(currentAccount, 0, 0).call();
   let exploded = await session.getContract().methods.getTokens(explodeIds).call();
@@ -650,6 +664,18 @@ const handleConnected = async () => {
   // document.getElementById('total-burned').innerText = config.totalBurned;
   // document.getElementById('total-supply').innerText = config.totalSupply;
   // document.getElementById('section5').style.display = 'block';
+
+
+  const pledge = await getAccountPledge(currentAccount);
+  if (pledge.guild) {
+    document.getElementById('connect-wallet').innerHTML += '<br /><small style=>'+ pledge.guild +'</small>';
+
+    const guildEl = document.getElementById('guild-container');
+    if (guildEl) {    
+      guildEl.innerHTML = '<h2 class="section__heading">Pledged: <span class="yellow">'+ pledge.guild +'</span></h2>';
+    }
+  }
+
 
   const {exploded, tokens} = await getAccountTokens(currentAccount);
   renderTokens(tokens);
@@ -1062,16 +1088,16 @@ const threeTry = (callback) => {
 const renderExplode = (token, i) => {
   const date = new Date(token.burnTS * 1000);
   const power = powerMap[token.tokenType];
-  const html = `
-      <div class="pig-item">
-          <div class="pig-image"><img src="${power.image}" alt="" /></div>
-          <div  class="pig-text">
-              <p>Power: ${power.name}</p>
-              <p>Exploded Date:</p>
-              <p>${date.toLocaleDateString()}</p>
-              <p>At ${date.toLocaleTimeString()}</p>
-          </div>
-      </div>`
+  const html = ''
+    +'  <div class="pig-item">'
+    +'      <div class="pig-image"><img src="'+ power.image +'" alt="" /></div>'
+    +'      <div  class="pig-text">'
+    +'          <p>Power: '+ power.name +'</p>'
+    +'          <p>Exploded Date:</p>'
+    +'          <p>'+ date.toLocaleDateString() +'</p>'
+    +'          <p>At '+ date.toLocaleTimeString() +'</p>'
+    +'      </div>'
+    +'  </div>'
 
   return html;
 };
@@ -1122,16 +1148,16 @@ const renderRecentExplosions = (explosions) => {
 const renderToken = (token) => {
   const date = new Date(token.mintTS * 1000);
   const power = powerMap[token.tokenType];
-  const innerHTML = `
-      <div class="mint-item-box">
-          <div class="image-box">
-              <img src="${power.image}" loading="lazy" alt="" class="full-image">
-              <div class="mint-label">Power: ${power.name}</div>
-          </div>
-          <div class="action-box">
-              <div class="mint-text">Mint Date: ${date.toLocaleDateString()}</div>
-          </div>
-      </div>`;
+  const innerHTML = ''
+    +'  <div class="mint-item-box">'
+    +'      <div class="image-box">'
+    +'          <img src="'+ power.image +'" loading="lazy" alt="" class="full-image">'
+    +'          <div class="mint-label">Power: '+ power.name +'</div>'
+    +'      </div>'
+    +'      <div class="action-box">'
+    +'          <div class="mint-text">Mint Date: '+ date.toLocaleDateString() +'</div>'
+    +'      </div>'
+    +'  </div>';
   
   const el = document.createElement('div');
   el.innerHTML = innerHTML;

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const countdownEl = document.getElementById("countdown");
   if (countdownEl) {
     // Set the future date and time to count down to
-    const countdownDate = new Date("2024-03-27T12:00:00-05:00").getTime();
+    const countdownDate = new Date("2024-05-01T12:00:00-05:00").getTime();
   
     // Update the countdown every second
     const countdown = setInterval(function() {
@@ -198,6 +198,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <div class="section__subheading">ETH is <span class="yellow">Refundable</span> Minus 5% Mint Fee</div>
                     <div class="section__subheading">Total Minted: <span id="total-minted" class="yellow">...</span></div>
                     <div class="section__subheading">Bombs minted today yield more than bombs minted tomorrow.</div>
+                    <div class="section__subheading">Mid bombs vanishing in...<span id="countdown"></span></div>
                 </div>
             </div>
             <div class="content-box dots">

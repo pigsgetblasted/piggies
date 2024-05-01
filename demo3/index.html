@@ -1,0 +1,1525 @@
+<html data-wf-domain="arturs-supercool-site-0768f6.webflow.io" data-wf-page="65cc2e9d0877c06745d0d8a1" data-wf-site="65cc2e9d0877c06745d0d89a" class=" w-mod-js">
+<head>
+    <style>.wf-force-outline-none[tabindex="-1"]:focus{outline:none;}</style>
+    <meta charset="utf-8"><title>PIGS GET BLASTED</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Webflow" name="generator">
+    <link href="/css/app.css" rel="stylesheet" type="text/css">
+    <link href="./css/custom.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const countdownEl = document.getElementById("countdown");
+  if (countdownEl) {
+    // Set the future date and time to count down to
+    const countdownDate = new Date("2024-03-27T12:00:00-05:00").getTime();
+  
+    // Update the countdown every second
+    const countdown = setInterval(function() {
+      // Get the current date and time
+      const now = new Date().getTime();
+    
+      // Calculate the remaining time in milliseconds
+      const distance = countdownDate - now;
+    
+      // Calculate days, hours, and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+      // Display the countdown
+      countdownEl.innerHTML = days + "d " + hours + "h " + seconds + "s ";
+    
+      // If the countdown is finished, display a message
+      if (distance < 0) {
+        clearInterval(countdown);
+        countdownEl.innerHTML = "EXPIRED";
+      }
+    }, 1000); // Update every second
+  }
+});
+</script>
+<style>
+#connect-wallet small {
+  font-size: 0.65em;
+  font-weight: 500;
+}
+
+#pledges .form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#pledges .form-group {
+    margin-bottom: 20px;
+}
+
+#pledges .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#pledges .dropdown {
+    position: relative;
+}
+
+#pledges .dropdown-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#pledges .dropdown-select:focus {
+    outline: none;
+    border-color: #66afe9;
+}
+
+#pledges .dropdown-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+#pledges .submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #fdb151;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#pledges .submit-button:hover {
+    background-color: #ccc;
+}
+
+#toast-modal p.title {
+}
+
+#toast-modal p.piggie {
+  margin: 1em;
+}
+
+#toast-modal p.tweet a{
+  color: white;
+  font-size: 1.2em;
+}
+
+
+</style>
+</head>   
+<body class="body">
+        <div id="toast-modal">
+          <div class="content"></div>
+        </div>
+    
+        <div data-animation="over-right" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+            <div class="navigation-container w-container">
+                <a href="#" class="w-nav-brand">
+                    <img src="images/Logo.png" loading="lazy" alt="" class="full-image">
+                </a>
+                <nav role="navigation" class="nav-menu w-nav-menu">
+                    <a href="https://www.twitter.com/pigsgetblasted/" class="nav-link w-inline-block">
+                        <div class="menu-image">
+                            <img src="images/x.png" loading="lazy" alt="">
+                        </div>
+                        <div class="nav-text">Twitter</div>
+                    </a>
+                    <a href="https://discord.gg/fAPfCyQCGY" class="nav-link w-inline-block">
+                        <div class="menu-image">
+                            <img src="images/discord.png" loading="lazy" alt="">
+                        </div>
+                        <div class="nav-text">Discord</div>
+                    </a>
+                    <a href="https://pigs-get-blasted.gitbook.io/rules/" class="nav-link w-inline-block">
+                        <div class="menu-image">
+                            <img src="images/rules.png" loading="lazy" alt="">
+                        </div>
+                        <div class="nav-text">Rules</div>
+                    </a>
+                    <a href="https://blast.mintify.xyz/blast/0xf6d13f878f95ebf06a0e468cebf4d97e759a7e2e" class="nav-link w-inline-block">
+                        <div class="menu-image">
+                            <img src="images/rules.png" loading="lazy" alt="">
+                        </div>
+                        <div class="nav-text">Marketplace</div>
+                    </a>			
+                    
+                </nav>
+
+                <div class="w-nav-connect">
+                    <a href="#" id="connect-wallet" class="nav-action">Connect Wallet</a>
+                </div>                
+
+                <div class="w-nav-button" style="-webkit-user-select: text;" aria-label="menu" role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
+                    <div class="w-icon-nav-menu"></div>
+                </div>
+            </div>
+            <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
+        </div>
+        
+        <!-- Section1 -->
+        <section class="section" id="section1">
+            <div class="container">
+                <div class="flex align-center">
+                    <div class="flex-left-item">
+                        <h1 class="heading">PIGS<span class="yellow">.</span><br>GET<span class="yellow">.</span><br>BLASTED<span class="yellow">.</span></h1>
+                    </div>
+                    <div class="flex-right-item">
+                        <div class="image-box">
+                            <img src="/images/pig.webp" loading="lazy" alt="" class="full-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section2 -->
+        <section class="section" id="section2">
+            <div class="heading-box center">
+                <div class="container short">
+                    <h2 class="section__heading">Mint <span class="yellow">Piggybombs.</span> </h2>
+                    <div class="section__subheading">ETH is <span class="yellow">Refundable</span> Minus 5% Mint Fee</div>
+                </div>
+            </div>
+            <div class="content-box dots">
+                <div class="container short">
+                    <div class="grid">
+                        <div id="w-node-_5739cb7f-a43b-dcfa-91b4-069deeac0123-45d0d8a1" class="mint-item-box">
+                            <div class="image-box">
+                                <img src="/images/pig2.webp" loading="lazy" alt="" class="full-image">
+
+                                <div class="mint-qty">
+                                    <div class="mint-qty-input">
+                                        <button class="minus-btn">
+                                            <img src="images/minus.png" alt="" />                                            
+                                        </button>
+                                        <input type="number" id="quantity-small" name="qty" value="1" min="1" step="1" />
+                                        <button class="plus-btn">
+                                            <img src="images/plus.png" alt="" />                                            
+                                        </button>
+                                    </div>
+                                    <div class="mint-label">Low Power <span>-0.03</span></div>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <a href="#" id="mint-small" class="mint-button">Mint</a>
+                            </div>
+                        </div>
+                        <div id="w-node-bb9a5d7b-15f4-957c-3a3b-91c0f19ca624-45d0d8a1" class="mint-item-box">
+                            <div class="image-box">
+                                <img src="images/pig_mid.webp" loading="lazy" alt="" class="full-image">
+                                <div class="mint-qty">
+                                    <div class="mint-qty-input">
+                                        <button class="minus-btn">
+                                            <img src="images/minus.png" alt="" />                                            
+                                        </button>
+                                        <input type="number" id="quantity-medium" name="qty" value="1" min="1" step="1" />
+                                        <button class="plus-btn">
+                                            <img src="images/plus.png" alt="" />                                            
+                                        </button>
+                                    </div>
+                                    <div class="mint-label">Mid Power <span>-0.10</span></div>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <a href="#" id="mint-medium" class="mint-button">Mint</a>
+                            </div>
+                        </div>
+                        <div id="w-node-_185001ba-e326-5b73-9fd4-748cd6860a10-45d0d8a1" class="mint-item-box">
+                            <div class="image-box">
+                                <img src="images/pig_big.webp" loading="lazy" alt="" class="full-image">
+                                <div class="mint-qty">
+                                    <div class="mint-qty-input">
+                                        <button class="minus-btn">
+                                            <img src="images/minus.png" alt="" />                                            
+                                        </button>
+                                        <input type="number" id="quantity-large" name="qty" value="1" min="1" step="1" />
+                                        <button class="plus-btn">
+                                            <img src="images/plus.png" alt="" />                                            
+                                        </button>
+                                    </div>
+                                    <div class="mint-label">Big Power <span>-0.25</span></div>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <a href="#" id="mint-large" class="mint-button">Mint</a>
+                            </div>
+                        </div>
+                        <div id="w-node-a79ca671-e8d0-236e-0b39-66e7af5934d1-45d0d8a1" class="mint-item-box">
+                            <div class="image-box">
+                                <img src="images/pig_nuke.webp" loading="lazy" alt="" class="full-image">
+                                <div class="mint-qty">
+                                    
+                                    <div class="mint-label">Nuclear Power<span>-0.10</span></div>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <a href="#" id="mint-nuclear" class="mint-button">SOLD OUT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section " id="section_mint">
+          <div class="heading-box center">
+              <div class="container short">
+                  <h2 class="section__heading">Mint <span class="yellow">Piggybombs.</span> </h2>
+                  <div class="section__subheading"> ETH is <span class="yellow">refundaBLE </span> MINUS 5% MINT FEE </div>
+              </div>
+          </div>
+          <div class="content-box">
+              <div class="container">
+                  <div class="main_flex">
+                      <div id="w-node-_5739cb7f-a43b-dcfa-91b4-069deeac0123-45d0d8a1" class="mint-item-box">
+                          <div class="image-box">
+                              <img src="images/pig2.png" loading="lazy" alt="" class="full-image">
+
+                           <div class="max_247">
+                              <div class="mint-qty">
+                                  <div class="mint-qty-input">
+                                      <button class="minus-btn">
+                                          <img src="images/minus.png" alt="" />                                            
+                                      </button>
+                                      <input type="text" name="qty" value="0" min="0" step="1" />
+                                      <button class="plus-btn">
+                                          <img src="images/plus.png" alt="" />                                            
+                                      </button>
+                                  </div>
+                                  <div class="mint-label">STRAW <span>– 0.25 ETH </span></div>
+                              </div>
+                              <div class="select-dropdown">
+                                  <button href="#" role="button" data-value="" class="select-dropdown__button"><span> Select Months </span> <i class="fa-solid fa-chevron-down"></i>
+                                  </button>
+                                  <ul class="select-dropdown__list">
+                                      <li data-value="1" class="select-dropdown__list-item">6 Months</li>
+                                      <li data-value="2" class="select-dropdown__list-item">12 Months</li>
+                                      <li data-value="3" class="select-dropdown__list-item">24 Months</li>
+                                  </ul>
+                              </div>
+                           </div>
+
+                          </div>
+                          <div class="action-box">
+                              <a href="#" class="mint-button">STAKE</a>
+                          </div>
+                      </div>
+                      <div id="w-node-bb9a5d7b-15f4-957c-3a3b-91c0f19ca624-45d0d8a1" class="mint-item-box">
+                          <div class="image-box">
+                              <img src="images/pig2.png" loading="lazy" alt="" class="full-image">
+                              <div class="max_247">
+                                  <div class="mint-qty">
+                                      <div class="mint-qty-input">
+                                          <button class="minus-btn">
+                                              <img src="images/minus.png" alt="" />                                            
+                                          </button>
+                                          <input type="text" name="qty" value="0" min="0" step="1" />
+                                          <button class="plus-btn">
+                                              <img src="images/plus.png" alt="" />                                            
+                                          </button>
+                                      </div>
+                                      <div class="mint-label">STICKS <span>– 0.5 ETH</span></div>
+                                  </div>
+                                  <div class="select-dropdown">
+                                      <button href="#" role="button" data-value="" class="select-dropdown__button"><span> Select Months </span> <i class="fa-solid fa-chevron-down"></i>
+                                      </button>
+                                      <ul class="select-dropdown__list">
+                                          <li data-value="1" class="select-dropdown__list-item">6 Months</li>
+                                          <li data-value="2" class="select-dropdown__list-item">12 Months</li>
+                                          <li data-value="3" class="select-dropdown__list-item">24 Months</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="action-box">
+                              <a href="#" class="mint-button">STAKE</a>
+                          </div>
+                      </div>
+                      <div id="w-node-_185001ba-e326-5b73-9fd4-748cd6860a10-45d0d8a1" class="mint-item-box">
+                          <div class="image-box">
+                              <img src="images/pig2.png" loading="lazy" alt="" class="full-image">
+                              <div class="max_247">
+                                  <div class="mint-qty">
+                                      <div class="mint-qty-input">
+                                          <button class="minus-btn">
+                                              <img src="images/minus.png" alt="" />                                            
+                                          </button>
+                                          <input type="text" name="qty" value="0" min="0" step="1" />
+                                          <button class="plus-btn">
+                                              <img src="images/plus.png" alt="" />                                            
+                                          </button>
+                                      </div>
+                                      <div class="mint-label">BRICKS <span>– 1 ETH</span></div>
+                                  </div>
+                                  <div class="select-dropdown">
+                                      <button href="#" role="button" data-value="" class="select-dropdown__button"><span> Select Months </span> <i class="fa-solid fa-chevron-down"></i>
+                                      </button>
+                                      <ul class="select-dropdown__list">
+                                          <li data-value="1" class="select-dropdown__list-item">6 Months</li>
+                                          <li data-value="2" class="select-dropdown__list-item">12 Months</li>
+                                          <li data-value="3" class="select-dropdown__list-item">24 Months</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="action-box">
+                              <a href="#" class="mint-button">STAKE</a>
+                          </div>
+                      </div>
+                      <div id="w-node-a79ca671-e8d0-236e-0b39-66e7af5934d1-45d0d8a1" class="mint-item-box">
+                          <div class="image-box">
+                              <img src="images/pig2.png" loading="lazy" alt="" class="full-image">
+                              <div class="max_247">
+                                  <div class="mint-qty">
+                                      <div class="mint-qty-input">
+                                          <button class="minus-btn">
+                                              <img src="images/minus.png" alt="" />                                            
+                                          </button>
+                                          <input type="text" name="qty" value="0" min="0" step="1" />
+                                          <button class="plus-btn">
+                                              <img src="images/plus.png" alt="" />                                            
+                                          </button>
+                                      </div>
+                                      <div class="mint-label">NUCLEAR <span>– 2 ETH</span></div>
+                                  </div>
+                                  <div class="select-dropdown">
+                                      <button href="#" role="button" data-value="" class="select-dropdown__button"><span> Select Months </span> <i class="fa-solid fa-chevron-down"></i>
+                                      </button>
+                                      <ul class="select-dropdown__list">
+                                          <li data-value="1" class="select-dropdown__list-item">6 Months</li>
+                                          <li data-value="2" class="select-dropdown__list-item">12 Months</li>
+                                          <li data-value="3" class="select-dropdown__list-item">24 Months</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="action-box">
+                              <a href="#" class="mint-button">STAKE</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+
+ <!-- Section2 -->
+        <section class="section" id="section2">
+            <div class="heading-box center">
+                <div class="container short">
+                    <h2 class="section__heading">STAKE ETH <span class="yellow">ACQUIRE HOUSES</span></h2>
+                    <div class="section__subheading">5% Staking Fee. 2X Houses for 12 months, 4X for 24 months. Non-Tradeable.</div>
+                </div>
+            </div>
+            <div class="content-box dots">
+                <div class="container short">
+                    <div class="grid">
+                        <div id="w-node-_5739cb7f-a43b-dcfa-91b4-069deeac0123-45d0d8a1" class="mint-item-box">
+                            <div class="image-box">
+                                <img src="/images/pig2.webp" loading="lazy" alt="" class="full-image">
+
+                                <div class="mint-qty">
+                                    <div class="mint-qty-input">
+                                        <button class="minus-btn">
+                                            <img src="images/minus.png" alt="" />                                            
+                                        </button>
+                                        <input type="number" id="quantity-small" name="qty" value="1" min="1" step="1" />
+                                        <button class="plus-btn">
+                                            <img src="images/plus.png" alt="" />                                            
+                                        </button>
+                                    </div>
+                                    <div class="mint-label">Straw <span>-0.25 ETH</span></div>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <a href="#" id="mint-small" class="mint-button">Stake</a>
+                            </div>
+                        </div>
+                        <div id="w-node-bb9a5d7b-15f4-957c-3a3b-91c0f19ca624-45d0d8a1" class="mint-item-box">
+                            <div class="image-box">
+                                <img src="images/pig_mid.webp" loading="lazy" alt="" class="full-image">
+                                <div class="mint-qty">
+                                    <div class="mint-qty-input">
+                                        <button class="minus-btn">
+                                            <img src="images/minus.png" alt="" />                                            
+                                        </button>
+                                        <input type="number" id="quantity-medium" name="qty" value="1" min="1" step="1" />
+                                        <button class="plus-btn">
+                                            <img src="images/plus.png" alt="" />                                            
+                                        </button>
+                                    </div>
+                                    <div class="mint-label">Sticks <span>-0.5 ETH</span></div>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <a href="#" id="mint-medium" class="mint-button">Stake</a>
+                            </div>
+                        </div>
+                        <div id="w-node-_185001ba-e326-5b73-9fd4-748cd6860a10-45d0d8a1" class="mint-item-box">
+                            <div class="image-box">
+                                <img src="images/pig_big.webp" loading="lazy" alt="" class="full-image">
+                                <div class="mint-qty">
+                                    <div class="mint-qty-input">
+                                        <button class="minus-btn">
+                                            <img src="images/minus.png" alt="" />                                            
+                                        </button>
+                                        <input type="number" id="quantity-large" name="qty" value="1" min="1" step="1" />
+                                        <button class="plus-btn">
+                                            <img src="images/plus.png" alt="" />                                            
+                                        </button>
+                                    </div>
+                                    <div class="mint-label">Bricks <span>-1 ETH</span></div>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <a href="#" id="mint-large" class="mint-button">Stake</a>
+                            </div>
+                        </div>
+                        <div id="w-node-a79ca671-e8d0-236e-0b39-66e7af5934d1-45d0d8a1" class="mint-item-box">
+                            <div class="image-box">
+                                <img src="images/pig_nuke.webp" loading="lazy" alt="" class="full-image">
+                                <div class="mint-qty">
+                                    
+                                    <div class="mint-label">Nuclear<span>-2 ETH</span></div>
+                                </div>
+                            </div>
+                            <div class="action-box">
+                                <a href="#" id="mint-nuclear" class="mint-button">Stake</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>	
+
+        <!-- Section3 -->
+        <section id="section3" class="section">
+            <div class="container">
+                <div class="section-overlay">
+                    <div class="heading-box center">
+                        <h2 class="section__heading">My <span class="yellow">Piggybombs.</span></h2>
+                        <div class="section__subheading">Click Piggybomb to <span class="yellow">explode and refund ETH.</span></div>
+                    </div>
+                    <div class="content-box">
+                        <div id="my-piggybombs" class="flex">
+                                                  
+                        </div>
+                        <div class="title-box">
+                            <!-- <h3 class="heading__medium right">Game <span class="yellow">Clock:</span> 90D 0H 0M</h3> -->
+                        </div>
+    
+                        <div class="flex-box"></div>
+                    </div>
+
+                    <div class="image-box" id="image-box1"><img src="images/frame2.png" alt="" /></div>
+                    <div class="image-box" id="image-box2"><img src="images/frame1.png" alt="" /></div>                    
+                    <div class="image-box" id="image-box3"><img src="images/horizontal-dots.png" alt="" /></div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section_house">
+          <div class="heading-box center">
+              <div class="container short">
+                  <h2 class="section__heading">Mint <span class="yellow">MY HOUSES.</span> </h2>
+                  <div class="section__subheading"><span class="yellow">HELP CONSTRUCTION </span>ALONG. CLICK HOUSE ONCE PER DAY FOR A <span class="yellow">DAILY XP BOOST.</span></div>
+                  <h3 class="section__heading"><span class="yellow">Boots</span> Daily Resets In: <b>23H 28M 5S</b></h3>
+              </div>
+          </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="item">
+                          <div class="house_thumb">
+                              <img src="./images/house-1.png" alt="">
+                          </div>
+                          <div class="house_content">
+                              <a href="#" class="mint-button fill_mint">BONUS XP</a>
+                              <a href="#" class="mint-button outline_mint">UNSTAKE ETH</a>
+                              <p>TOTAL XP:<span class="yellow"> 3,218 </span></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="item">
+                          <div class="house_thumb">
+                              <img src="./images/house-1.png" alt="">
+                          </div>
+                          <div class="house_content">
+                              <a href="#" class="mint-button fill_mint">BONUS XP</a>
+                              <a href="#" class="mint-button outline_mint">UNSTAKE ETH</a>
+                              <p>TOTAL XP:<span class="yellow"> 3,218 </span></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="item">
+                          <div class="house_thumb">
+                              <img src="./images/house-1.png" alt="">
+                          </div>
+                          <div class="house_content">
+                              <a href="#" class="mint-button fill_mint">BONUS XP</a>
+                              <a href="#" class="mint-button outline_mint">UNSTAKE ETH</a>
+                              <p>TOTAL XP:<span class="yellow"> 3,218 </span></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="item">
+                          <div class="house_thumb">
+                              <img src="./images/house-1.png" alt="">
+                          </div>
+                          <div class="house_content">
+                              <a href="#" class="mint-button fill_mint">BONUS XP</a>
+                              <a href="#" class="mint-button outline_mint">UNSTAKE ETH</a>
+                              <p>TOTAL XP:<span class="yellow"> 3,218 </span></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="item">
+                          <div class="house_thumb">
+                              <img src="./images/house-1.png" alt="">
+                          </div>
+                          <div class="house_content">
+                              <a href="#" class="mint-button fill_mint">BONUS XP</a>
+                              <a href="#" class="mint-button outline_mint">UNSTAKE ETH</a>
+                              <p>TOTAL XP:<span class="yellow"> 3,218 </span></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="item">
+                          <div class="house_thumb">
+                              <img src="./images/house-1.png" alt="">
+                          </div>
+                          <div class="house_content">
+                              <a href="#" class="mint-button fill_mint">BONUS XP</a>
+                              <a href="#" class="mint-button outline_mint">UNSTAKE ETH</a>
+                              <p>TOTAL XP:<span class="yellow"> 3,218 </span></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <h3 class="section__heading">Total <span class="yellow">XP:</span>12,872</h3>
+          </div>
+      </section>
+
+
+
+
+        <!-- Section4 -->
+        <section id="section4" class="section">
+            <div class="container">
+                <div class="heading-box center">
+                    <div class="container short">
+                        <h2 class="section__heading">My Houses. <span class="yellow">Under Construction.</span></span></h2>
+                        <div class="section__subheading">Total XP: <span class="yellow">3,218</span></div>
+			<div class="section__subheading">Help construction along. Click house once per day for a daily XP boost.</div>			    
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="pigs-box">
+                        <div id="my-exploded" class="pigs-box-wrapper">
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section4 -->
+        <section id="section4" class="section">
+            <div class="container">
+                <div class="heading-box center">
+                    <div class="container short">
+                        <h2 class="section__heading">My <span class="yellow">Exploded</span> Bombs.</span></h2>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="pigs-box">
+                        <div id="my-exploded" class="pigs-box-wrapper">
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>	
+
+
+        <!-- pledges -->
+        <section id="pledges" class="section">
+            <div class="container">
+                <div class="heading-box center">
+                    <div class="container short">
+
+                        <h2 class="section__heading">Pledge to <span class="yellow">Guild</span>.</span></h2>
+                        <div class="section__subheading">Receive a bonus if your guild plays well. No downside.</div>
+                        <div class="section__subheading"><span class="yellow">Pledges cannot be changed.</span></div>
+
+                        <div id="guild-container" class="form-container">
+                            <div class="form-group">
+                                <div class="dropdown">
+                                    <select id="select-guild" class="dropdown-select">
+                                        <option value="">Select a Guild</option>
+                                        <option value="Untamed Elephants">Untamed Elephants</option>
+                                        <option value="Crazy Carls">Crazy Carls</option>
+                                        <option value="LVCIDIA">LVCIDIA</option>
+                                        <option value="Rekt Guys">Rekt Guys</option>
+                                        <option value="Zen Academy">Zen Academy</option>
+                                        <option value="Nifty Noon">Nifty Noon</option>
+                                        <option value="ASIAVERSE">ASIAVERSE</option>                                        
+                                        <option value="Risk On Blast">Risk On Blast</option>
+                                        <option value="Apes">Apes</option>
+                                        <option value="Puppets">Bitcoin Puppets/Ordinals</option>
+                                    </select>
+                                    <div class="dropdown-arrow">&#9662;</div>
+                                </div>
+                            </div>
+                            <a href="#" id="pledge-button" class="mint-button">Pledge</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Section5 -->
+        <section id="section5" class="section" style="display: none;">
+            <div class="container">
+                <div class="heading-box center">
+                    <h2 class="section__heading">Current <span class="yellow">Explosions.</span></h2>
+                </div>
+                <div class="content-box">
+                    <div class="heading-grid">
+                        <div class="grid-image"><img src="images/VerticalLine.png" alt="" /></div>
+                        <div class="heading-grid-left-item">
+                            <h3 class="section__subheading1">Unexploded<br/><span class="yellow">Bombs:</span></h3>
+                            <div id="total-burned" class="section__number">...</div>
+                            <!--
+                            <p class="section__paragraph">(18 nuclear,<br>325 large,<br>15 medium,<br>8 small)</p>
+                            -->
+                        </div>
+                        <div class="heading-grid-right-item">
+                            <h3 class="section__subheading1">Unexploded<br/><span class="yellow">Bombs:</span></h3>
+                            <div id="total-supply" class="section__number">...</div>
+                            <!--
+                            <p class="section__paragraph">(58 nuclear,<br>900 large,<br>11 medium,<br>200 small)</p>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section6 -->
+        <section id="section6" class="section" style="display: none;">
+            <div class="container">
+                <div class="heading-box center" style="margin-bottom: 5em;">
+                    <h2 class="section__heading">Community <span class="yellow">Explosions.</span></h2>
+                </div>
+                <div class="history-box">
+                    <div id="history-items" class="history-box-wrapper">
+                        <div class="history-line-box"><div class="history-line"></div></div>
+                        
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div>
+        
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div>
+        
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div>
+
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div>
+        
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div>
+        
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div>      
+                        
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div> 
+
+                        <div class="history-item">
+                            <h3>March 1</h3>
+                            <h4>15 explosions</h4>
+                            <p>(58 nuclear, 900 large, 12 medium, 2000 small)</p>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Section7 -->
+        <section class="section" id="section7">
+            <div class="container">
+                <h2 class="heading__medium">Bulls and bears make money<span class="yellow">,</span><br><span class="yellow">pigs get blasted</span>.</h2>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="footer"><div class="container"><div class="footer-text">Pigs get blasted. 2024.</div></div></section>
+
+
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/jquery.dragscroll.min.js" type="text/javascript"></script>
+        <script src="js/app.js" type="text/javascript"></script>
+        <script src="js/custom.js" type="text/javascript"></script>
+        
+        <!-- <script type="text/javascript" src="https://unpkg.com/web3@1.6.0/dist/web3.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.4/web3.min.js" integrity="sha512-jrrqoRbH3+TZhsm54CVfS3hsIPDC2lYTXFBTJ5AkjRzcxtdlXxpSpYj0HGoN8DNkMD4zq1IjJpWBHI5KPGUYhg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.4/dist/index.js"></script> -->
+        <!-- <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.7.0/dist/umd/index.min.js"></script> -->
+        <!-- <script type="text/javascript" src="/js/walletlink.bundle.js"></script> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/keccak256@1.0.6/keccak256.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/merkletreejs@0.3.11/merkletree.js"></script>
+        <script type="text/javascript" src="/js/merkle.js"></script>
+        <script type="text/javascript" src="/js/eth-session.js"></script>
+<script>
+const epoch = 2177302;
+
+const months = {
+  '01': 'January',
+  '02': 'February',
+  '03': 'March',
+  '04': 'April',
+  '05': 'May',
+  '06': 'June',
+  '07': 'July',
+  '08': 'August',
+  '09': 'September',
+  '10': 'October',
+  '11': 'November',
+  '12': 'December'
+};
+
+const names = {
+  1: 'nuclear',
+  2: 'large',
+  3: 'medium',
+  4: 'small'
+};
+
+const powerMap = {
+  1: {
+    name: 'Nuclear',
+    image: '/images/pig_nuke.webp'
+  },
+  2: {
+    name: 'Big',
+    image: '/images/pig_big.webp'
+  },
+  3: {
+    name: 'Mid',
+    image: '/images/pig_mid.webp'
+  },
+  4: {
+    name: 'Low',
+    image: '/images/pig2.webp'
+  }
+};
+
+let config = {
+  feePercent: BigInt(5),
+  saleState: 0,
+  totalBurned: -1,
+  totalSupply: -1,
+  prices: {
+    1: BigInt('100000000000000'),
+    2: BigInt('250000000000000'),
+    3: BigInt('100000000000000'),
+    4: BigInt( '30000000000000')
+  }
+};
+
+const merkle = new Merkle();
+merkle.load([
+  "0xB2D2ECC7d94CFb8e70F60AeB97Bf7F4C4cB8eF28"
+]);
+
+console.debug(merkle.getHexRoot());
+
+// sepolia
+/*
+const session = new EthereumSession({
+	chain:           EthereumSession.COMMON_CHAINS[168587773],
+	contractAddress: '0x83660b860b70bD957fD89A7D13D74853dA2D03D9',
+	contractABI:     [{"inputs":[{"internalType":"address","name":"_blastContract","type":"address"},{"internalType":"address","name":"_pointsContract","type":"address"},{"internalType":"address","name":"_pointsOperator","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"AddressInsufficientBalance","type":"error"},{"inputs":[],"name":"ERC721EnumerableForbiddenBatchMint","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"address","name":"owner","type":"address"}],"name":"ERC721IncorrectOwner","type":"error"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ERC721InsufficientApproval","type":"error"},{"inputs":[{"internalType":"address","name":"approver","type":"address"}],"name":"ERC721InvalidApprover","type":"error"},{"inputs":[{"internalType":"address","name":"operator","type":"address"}],"name":"ERC721InvalidOperator","type":"error"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"ERC721InvalidOwner","type":"error"},{"inputs":[{"internalType":"address","name":"receiver","type":"address"}],"name":"ERC721InvalidReceiver","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"}],"name":"ERC721InvalidSender","type":"error"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ERC721NonexistentToken","type":"error"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"index","type":"uint256"}],"name":"ERC721OutOfBoundsIndex","type":"error"},{"inputs":[],"name":"FailedInnerCall","type":"error"},{"inputs":[],"name":"InvalidPayment","type":"error"},{"inputs":[],"name":"InvalidPriceCount","type":"error"},{"inputs":[],"name":"NoBalance","type":"error"},{"inputs":[],"name":"NotAContract","type":"error"},{"inputs":[],"name":"NotAuthorized","type":"error"},{"inputs":[],"name":"NotEOA","type":"error"},{"inputs":[],"name":"OrderExceedsAllowance","type":"error"},{"inputs":[],"name":"OrderExceedsSupply","type":"error"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"OwnableInvalidOwner","type":"error"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"OwnableUnauthorizedAccount","type":"error"},{"inputs":[],"name":"PaymentFailed","type":"error"},{"inputs":[],"name":"ReentrancyGuardReentrantCall","type":"error"},{"inputs":[{"internalType":"uint8","name":"","type":"uint8"}],"name":"SalesClosed","type":"error"},{"inputs":[],"name":"UnauthorizedDelegate","type":"error"},{"inputs":[{"internalType":"uint8","name":"","type":"uint8"}],"name":"UnsupportedTokenType","type":"error"},{"inputs":[{"internalType":"bytes","name":"","type":"bytes"}],"name":"WithdrawError","type":"error"},{"anonymous":false,"inputs":[{"internalType":"address","name":"owner","type":"address","indexed":true},{"internalType":"address","name":"approved","type":"address","indexed":true},{"internalType":"uint256","name":"tokenId","type":"uint256","indexed":true}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"internalType":"address","name":"owner","type":"address","indexed":true},{"internalType":"address","name":"operator","type":"address","indexed":true},{"internalType":"bool","name":"approved","type":"bool","indexed":false}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"internalType":"address","name":"from","type":"address","indexed":true},{"internalType":"uint16","name":"tokenId","type":"uint16","indexed":true},{"internalType":"uint8","name":"tokenType","type":"uint8","indexed":true},{"internalType":"uint32","name":"burnTS","type":"uint32","indexed":false},{"internalType":"uint32","name":"duration","type":"uint32","indexed":false}],"name":"Blast","type":"event"},{"anonymous":false,"inputs":[{"internalType":"address","name":"previousOwner","type":"address","indexed":true},{"internalType":"address","name":"newOwner","type":"address","indexed":true}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"internalType":"address","name":"from","type":"address","indexed":true},{"internalType":"address","name":"to","type":"address","indexed":true},{"internalType":"uint256","name":"tokenId","type":"uint256","indexed":true}],"name":"Transfer","type":"event"},{"name":"BLAST","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"address","name":"","type":"address"}]},{"name":"BLAST_POINTS","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"address","name":"","type":"address"}]},{"name":"MAX_NUKES","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"approve","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"outputs":[]},{"name":"balanceOf","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"owner","type":"address"}],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"burn","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"uint16[]","name":"tokenIds","type":"uint16[]"}],"outputs":[]},{"name":"burned","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"burnedOfOwner","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"limit","type":"uint256"},{"internalType":"uint256","name":"startIdx","type":"uint256"}],"outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}]},{"name":"feePercent","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"getApproved","stateMutability":"view","type":"function","inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"outputs":[{"internalType":"address","name":"","type":"address"}]},{"name":"getClaimableETH","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"getClaimableGas","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"getConfig","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"tuple","name":"","type":"tuple","components":[{"internalType":"uint256","name":"totalBurned","type":"uint256"},{"internalType":"uint16","name":"feePercent","type":"uint16"},{"internalType":"uint8","name":"saleState","type":"uint8"},{"internalType":"uint256","name":"totalSupply","type":"uint256"},{"internalType":"uint256[]","name":"prices","type":"uint256[]"}]}]},{"name":"getTokens","stateMutability":"view","type":"function","inputs":[{"internalType":"uint256[]","name":"tokenIds","type":"uint256[]"}],"outputs":[{"internalType":"tuple[]","name":"","type":"tuple[]","components":[{"internalType":"uint256","name":"value","type":"uint256"},{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint32","name":"mintTS","type":"uint32"},{"internalType":"uint32","name":"burnTS","type":"uint32"},{"internalType":"uint8","name":"tokenType","type":"uint8"}]}]},{"name":"isApprovedForAll","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"outputs":[{"internalType":"bool","name":"","type":"bool"}]},{"name":"isDelegate","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"addr","type":"address"}],"outputs":[{"internalType":"bool","name":"","type":"bool"}]},{"name":"merkleRootPrimary","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}]},{"name":"merkleRootSecondary","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}]},{"name":"mint","stateMutability":"payable","type":"function","inputs":[{"internalType":"uint16","name":"quantity","type":"uint16"},{"internalType":"uint8","name":"tokenType","type":"uint8"},{"internalType":"bytes32[]","name":"proof","type":"bytes32[]"}],"outputs":[]},{"name":"mintFees","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"name","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"string","name":"","type":"string"}]},{"name":"nextNuke","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"nextPiggy","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"nukeLimit","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"owner","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"address","name":"","type":"address"}]},{"name":"ownerOf","stateMutability":"view","type":"function","inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"outputs":[{"internalType":"address","name":"","type":"address"}]},{"name":"owners","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"","type":"address"}],"outputs":[{"internalType":"uint16","name":"balance","type":"uint16"},{"internalType":"uint16","name":"burned","type":"uint16"},{"internalType":"uint16","name":"nuclear","type":"uint16"}]},{"name":"prices","stateMutability":"view","type":"function","inputs":[{"internalType":"uint8","name":"","type":"uint8"}],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"renounceOwnership","stateMutability":"nonpayable","type":"function","inputs":[],"outputs":[]},{"name":"safeTransferFrom","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"outputs":[]},{"name":"safeTransferFrom","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"data","type":"bytes"}],"outputs":[]},{"name":"saleState","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint8","name":"","type":"uint8"}]},{"name":"setApprovalForAll","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"outputs":[]},{"name":"setBlastPointsConfig","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"_pointsContract","type":"address"},{"internalType":"address","name":"_pointsOperator","type":"address"}],"outputs":[]},{"name":"setDelegate","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"bool","name":"isDelegate_","type":"bool"}],"outputs":[]},{"name":"setFeePercent","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"uint16","name":"_pct","type":"uint16"}],"outputs":[]},{"name":"setMerkleRoot","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"bytes32","name":"merkleRoot","type":"bytes32"}],"outputs":[]},{"name":"setNuclearLimit","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"uint16","name":"limit","type":"uint16"}],"outputs":[]},{"name":"setPrices","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"uint256[]","name":"newPrices","type":"uint256[]"}],"outputs":[]},{"name":"setSaleState","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"uint8","name":"newState","type":"uint8"}],"outputs":[]},{"name":"setTokenURI","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"string","name":"prefix","type":"string"},{"internalType":"string","name":"suffix","type":"string"}],"outputs":[]},{"name":"supportsInterface","stateMutability":"view","type":"function","inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"outputs":[{"internalType":"bool","name":"","type":"bool"}]},{"name":"symbol","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"string","name":"","type":"string"}]},{"name":"tokenByIndex","stateMutability":"view","type":"function","inputs":[{"internalType":"uint256","name":"index","type":"uint256"}],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"tokenOfOwnerByIndex","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"index","type":"uint256"}],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"tokenURI","stateMutability":"view","type":"function","inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"outputs":[{"internalType":"string","name":"","type":"string"}]},{"name":"tokenURIPrefix","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"string","name":"","type":"string"}]},{"name":"tokenURISuffix","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"string","name":"","type":"string"}]},{"name":"tokens","stateMutability":"view","type":"function","inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"outputs":[{"internalType":"uint256","name":"value","type":"uint256"},{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint32","name":"mintTS","type":"uint32"},{"internalType":"uint32","name":"burnTS","type":"uint32"},{"internalType":"uint8","name":"tokenType","type":"uint8"}]},{"name":"tokensOfOwner","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"limit","type":"uint256"},{"internalType":"uint256","name":"startIdx","type":"uint256"}],"outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}]},{"name":"totalBurned","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"totalSupply","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"transferFrom","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"outputs":[]},{"name":"transferOwnership","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"outputs":[]},{"name":"updateMerkleRoot","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"bytes32","name":"merkleRoot","type":"bytes32"}],"outputs":[]},{"name":"withdrawETH","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"to","type":"address"}],"outputs":[]},{"name":"withdrawFees","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"to","type":"address"}],"outputs":[]},{"name":"withdrawGas","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"to","type":"address"}],"outputs":[]}]
+});
+*/
+
+// mainnet
+const session = new EthereumSession({
+	chain:           EthereumSession.COMMON_CHAINS[81457],
+	contractAddress: '0xF6D13F878F95EbF06a0E468ceBf4D97e759A7e2e',
+	contractABI:     [{"inputs":[{"internalType":"address","name":"_blastContract","type":"address"},{"internalType":"address","name":"_pointsContract","type":"address"},{"internalType":"address","name":"_pointsOperator","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"AddressInsufficientBalance","type":"error"},{"inputs":[],"name":"ERC721EnumerableForbiddenBatchMint","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"address","name":"owner","type":"address"}],"name":"ERC721IncorrectOwner","type":"error"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ERC721InsufficientApproval","type":"error"},{"inputs":[{"internalType":"address","name":"approver","type":"address"}],"name":"ERC721InvalidApprover","type":"error"},{"inputs":[{"internalType":"address","name":"operator","type":"address"}],"name":"ERC721InvalidOperator","type":"error"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"ERC721InvalidOwner","type":"error"},{"inputs":[{"internalType":"address","name":"receiver","type":"address"}],"name":"ERC721InvalidReceiver","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"}],"name":"ERC721InvalidSender","type":"error"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ERC721NonexistentToken","type":"error"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"index","type":"uint256"}],"name":"ERC721OutOfBoundsIndex","type":"error"},{"inputs":[],"name":"FailedInnerCall","type":"error"},{"inputs":[],"name":"InvalidPayment","type":"error"},{"inputs":[],"name":"InvalidPriceCount","type":"error"},{"inputs":[],"name":"NoBalance","type":"error"},{"inputs":[],"name":"NotAContract","type":"error"},{"inputs":[],"name":"NotAuthorized","type":"error"},{"inputs":[],"name":"NotEOA","type":"error"},{"inputs":[],"name":"OrderExceedsAllowance","type":"error"},{"inputs":[],"name":"OrderExceedsSupply","type":"error"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"OwnableInvalidOwner","type":"error"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"OwnableUnauthorizedAccount","type":"error"},{"inputs":[],"name":"PaymentFailed","type":"error"},{"inputs":[],"name":"ReentrancyGuardReentrantCall","type":"error"},{"inputs":[{"internalType":"uint8","name":"","type":"uint8"}],"name":"SalesClosed","type":"error"},{"inputs":[],"name":"UnauthorizedDelegate","type":"error"},{"inputs":[{"internalType":"uint8","name":"","type":"uint8"}],"name":"UnsupportedTokenType","type":"error"},{"inputs":[{"internalType":"bytes","name":"","type":"bytes"}],"name":"WithdrawError","type":"error"},{"anonymous":false,"inputs":[{"internalType":"address","name":"owner","type":"address","indexed":true},{"internalType":"address","name":"approved","type":"address","indexed":true},{"internalType":"uint256","name":"tokenId","type":"uint256","indexed":true}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"internalType":"address","name":"owner","type":"address","indexed":true},{"internalType":"address","name":"operator","type":"address","indexed":true},{"internalType":"bool","name":"approved","type":"bool","indexed":false}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"internalType":"address","name":"from","type":"address","indexed":true},{"internalType":"uint16","name":"tokenId","type":"uint16","indexed":true},{"internalType":"uint8","name":"tokenType","type":"uint8","indexed":true},{"internalType":"uint32","name":"burnTS","type":"uint32","indexed":false},{"internalType":"uint32","name":"duration","type":"uint32","indexed":false}],"name":"Blast","type":"event"},{"anonymous":false,"inputs":[{"internalType":"address","name":"previousOwner","type":"address","indexed":true},{"internalType":"address","name":"newOwner","type":"address","indexed":true}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"internalType":"address","name":"from","type":"address","indexed":true},{"internalType":"address","name":"to","type":"address","indexed":true},{"internalType":"uint256","name":"tokenId","type":"uint256","indexed":true}],"name":"Transfer","type":"event"},{"name":"BLAST","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"address","name":"","type":"address"}]},{"name":"BLAST_POINTS","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"address","name":"","type":"address"}]},{"name":"MAX_NUKES","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"approve","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"outputs":[]},{"name":"balanceOf","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"owner","type":"address"}],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"burn","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"uint16[]","name":"tokenIds","type":"uint16[]"}],"outputs":[]},{"name":"burned","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"burnedOfOwner","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"limit","type":"uint256"},{"internalType":"uint256","name":"startIdx","type":"uint256"}],"outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}]},{"name":"feePercent","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"getApproved","stateMutability":"view","type":"function","inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"outputs":[{"internalType":"address","name":"","type":"address"}]},{"name":"getClaimableETH","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"getClaimableGas","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"getConfig","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"tuple","name":"","type":"tuple","components":[{"internalType":"uint256","name":"totalBurned","type":"uint256"},{"internalType":"uint16","name":"feePercent","type":"uint16"},{"internalType":"uint8","name":"saleState","type":"uint8"},{"internalType":"uint256","name":"totalSupply","type":"uint256"},{"internalType":"uint256[]","name":"prices","type":"uint256[]"}]}]},{"name":"getTokens","stateMutability":"view","type":"function","inputs":[{"internalType":"uint256[]","name":"tokenIds","type":"uint256[]"}],"outputs":[{"internalType":"tuple[]","name":"","type":"tuple[]","components":[{"internalType":"uint256","name":"value","type":"uint256"},{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint32","name":"mintTS","type":"uint32"},{"internalType":"uint32","name":"burnTS","type":"uint32"},{"internalType":"uint8","name":"tokenType","type":"uint8"}]}]},{"name":"isApprovedForAll","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"outputs":[{"internalType":"bool","name":"","type":"bool"}]},{"name":"isDelegate","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"addr","type":"address"}],"outputs":[{"internalType":"bool","name":"","type":"bool"}]},{"name":"merkleRootPrimary","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}]},{"name":"merkleRootSecondary","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}]},{"name":"mint","stateMutability":"payable","type":"function","inputs":[{"internalType":"uint16","name":"quantity","type":"uint16"},{"internalType":"uint8","name":"tokenType","type":"uint8"},{"internalType":"bytes32[]","name":"proof","type":"bytes32[]"}],"outputs":[]},{"name":"mintFees","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"name","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"string","name":"","type":"string"}]},{"name":"nextNuke","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"nextPiggy","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"nukeLimit","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"owner","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"address","name":"","type":"address"}]},{"name":"ownerOf","stateMutability":"view","type":"function","inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"outputs":[{"internalType":"address","name":"","type":"address"}]},{"name":"owners","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"","type":"address"}],"outputs":[{"internalType":"uint16","name":"balance","type":"uint16"},{"internalType":"uint16","name":"burned","type":"uint16"},{"internalType":"uint16","name":"nuclear","type":"uint16"}]},{"name":"prices","stateMutability":"view","type":"function","inputs":[{"internalType":"uint8","name":"","type":"uint8"}],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"renounceOwnership","stateMutability":"nonpayable","type":"function","inputs":[],"outputs":[]},{"name":"safeTransferFrom","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"outputs":[]},{"name":"safeTransferFrom","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"data","type":"bytes"}],"outputs":[]},{"name":"saleState","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint8","name":"","type":"uint8"}]},{"name":"setApprovalForAll","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"outputs":[]},{"name":"setBlastPointsConfig","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"_pointsContract","type":"address"},{"internalType":"address","name":"_pointsOperator","type":"address"}],"outputs":[]},{"name":"setDelegate","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"bool","name":"isDelegate_","type":"bool"}],"outputs":[]},{"name":"setFeePercent","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"uint16","name":"_pct","type":"uint16"}],"outputs":[]},{"name":"setMerkleRoot","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"bytes32","name":"merkleRoot","type":"bytes32"}],"outputs":[]},{"name":"setNuclearLimit","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"uint16","name":"limit","type":"uint16"}],"outputs":[]},{"name":"setPrices","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"uint256[]","name":"newPrices","type":"uint256[]"}],"outputs":[]},{"name":"setSaleState","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"uint8","name":"newState","type":"uint8"}],"outputs":[]},{"name":"setTokenURI","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"string","name":"prefix","type":"string"},{"internalType":"string","name":"suffix","type":"string"}],"outputs":[]},{"name":"supportsInterface","stateMutability":"view","type":"function","inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"outputs":[{"internalType":"bool","name":"","type":"bool"}]},{"name":"symbol","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"string","name":"","type":"string"}]},{"name":"tokenByIndex","stateMutability":"view","type":"function","inputs":[{"internalType":"uint256","name":"index","type":"uint256"}],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"tokenOfOwnerByIndex","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"index","type":"uint256"}],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"tokenURI","stateMutability":"view","type":"function","inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"outputs":[{"internalType":"string","name":"","type":"string"}]},{"name":"tokenURIPrefix","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"string","name":"","type":"string"}]},{"name":"tokenURISuffix","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"string","name":"","type":"string"}]},{"name":"tokens","stateMutability":"view","type":"function","inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"outputs":[{"internalType":"uint256","name":"value","type":"uint256"},{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint32","name":"mintTS","type":"uint32"},{"internalType":"uint32","name":"burnTS","type":"uint32"},{"internalType":"uint8","name":"tokenType","type":"uint8"}]},{"name":"tokensOfOwner","stateMutability":"view","type":"function","inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"limit","type":"uint256"},{"internalType":"uint256","name":"startIdx","type":"uint256"}],"outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}]},{"name":"totalBurned","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint16","name":"","type":"uint16"}]},{"name":"totalSupply","stateMutability":"view","type":"function","inputs":[],"outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"name":"transferFrom","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"outputs":[]},{"name":"transferOwnership","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"outputs":[]},{"name":"updateMerkleRoot","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"bytes32","name":"merkleRoot","type":"bytes32"}],"outputs":[]},{"name":"withdrawETH","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"to","type":"address"}],"outputs":[]},{"name":"withdrawFees","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"to","type":"address"}],"outputs":[]},{"name":"withdrawGas","stateMutability":"nonpayable","type":"function","inputs":[{"internalType":"address","name":"to","type":"address"}],"outputs":[]}]
+});
+
+const abbrev = ( account ) => {
+	return account.substring( 0, 6 ) +'...'+ account.substring( account.length - 4 );
+}
+
+const formatToken = (token, tokenId) => ({
+  tokenId,
+  burnTS: parseInt(token.burnTS, 10),
+  mintTS: parseInt(token.mintTS, 10),
+  owner: token.owner,
+  tokenType: parseInt(token.tokenType, 10),
+  value: BigInt(token.value)
+});
+
+const getAccountPledge = async (currentAccount) => {
+  const res = await fetch(`https://piggies.herodevelopment.com/pledge?account=${currentAccount}`);
+  if (res.ok) {
+    return res.json();
+  }
+  else {
+    return [];
+  }
+};
+
+const getAccountTokens = async (currentAccount) => {
+  const explodeIds = await session.getContract().methods.burnedOfOwner(currentAccount, 0, 0).call();
+  let exploded = await session.getContract().methods.getTokens(explodeIds).call();
+  exploded = exploded.map((e, idx) => {
+    return formatToken(e, explodeIds[idx]);
+  });
+
+  const tokenIds = await session.getContract().methods.tokensOfOwner(currentAccount, 0, 0).call();
+  let tokens = await session.getContract().methods.getTokens(tokenIds).call();
+  tokens = tokens.map((t, idx) => {
+    return formatToken(t, tokenIds[idx]);
+  });
+
+  return {exploded, tokens};
+};
+
+const getRecentExplosions = async (quantity) => {
+  const res = await fetch(`https://piggies.herodevelopment.com/stats?quantity=${quantity}`);
+  if (res.ok) {
+    return res.json();
+  }
+  else {
+    return [];
+  }
+}
+
+const handleConnect = async (evt, deep) => {
+	if (evt?.cancelable)
+		evt?.preventDefault();
+
+	// if (deep) {
+	// 	try{
+	// 		this.provider = await modal.connect();
+	// 	}
+	// 	catch (e) {
+	// 		console.warn({e});
+	// 		if( e && e !== 'Modal closed by user' )
+	// 			alert( "Connection failed, please try again" );
+  // 
+	// 		return false;
+	// 	}
+	// }
+
+	if (await session.connectWeb3(deep)) {
+		await handleConnected();
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+const handleConnected = async () => {
+	const allAccounts = await session.getWalletAccounts();
+  if (!allAccounts?.length)
+    return;
+
+
+  const currentAccount = allAccounts[0];
+	document.getElementById('connect-wallet').innerText = abbrev(currentAccount);
+
+  const tmpConfig = await session.getContract().methods.getConfig().call();
+
+  config.feePercent = BigInt(tmpConfig.feePercent);
+  config.saleState = tmpConfig.saleState;
+  config.totalBurned = parseInt(tmpConfig.totalBurned, 10);
+  config.totalSupply = parseInt(tmpConfig.totalSupply, 10);
+  config.prices[1] = BigInt(tmpConfig.prices[1]);
+  config.prices[2] = BigInt(tmpConfig.prices[2]);
+  config.prices[3] = BigInt(tmpConfig.prices[3]);
+  config.prices[4] = BigInt(tmpConfig.prices[4]);
+
+  document.getElementById('total-minted').innerText = config.totalBurned + config.totalSupply;
+
+  // document.getElementById('total-burned').innerText = config.totalBurned;
+  // document.getElementById('total-supply').innerText = config.totalSupply;
+  // document.getElementById('section5').style.display = 'block';
+
+
+  const pledge = await getAccountPledge(currentAccount);
+  if (pledge.guild) {
+    document.getElementById('connect-wallet').innerHTML += '<br /><small style=>'+ pledge.guild +'</small>';
+
+    const guildEl = document.getElementById('guild-container');
+    if (guildEl) {    
+      guildEl.innerHTML = '<h2 class="section__heading">Pledged: <span class="yellow">'+ pledge.guild +'</span></h2>';
+    }
+  }
+
+
+  const {exploded, tokens} = await getAccountTokens(currentAccount);
+  renderTokens(tokens);
+  renderExploded(exploded);
+};
+
+const handleInit = async () => {
+	try{
+		await handleConnect();
+
+		const explosions = await getRecentExplosions(5);
+		renderRecentExplosions(explosions);
+		reflow();
+	}
+	catch(err){
+		console.warn({ err });
+	}
+};
+
+const handleMintSmall = async () => {
+  const quantity = document.getElementById('quantity-small').value;
+  handleMint(quantity, 4);
+};
+
+const handleMintMedium = async () => {
+  const quantity = document.getElementById('quantity-medium').value;
+  handleMint(quantity, 3);
+};
+
+const handleMintLarge = async () => {
+  const quantity = document.getElementById('quantity-large').value;
+  handleMint(quantity, 2);
+};
+
+const handleMintNuclear = async () => {
+  // const quantity = document.getElementById('quantity-nuclear').value;
+  handleMint(1, 1);
+};
+
+const handleMint = async (quantity, tokenType) => {
+  try {
+    const tmpQuantity = parseInt(quantity, 10);
+    if (Number.isNaN(tmpQuantity)) {
+      console.warn(`Invalid quantity: ${quantity}`);
+      return;
+    }
+
+    if (tmpQuantity === 0) {
+      alert('Please enter a quantity');
+      console.warn(`Invalid quantity: ${quantity}`);
+      return;
+    }
+
+
+    let currentAccount;
+    if (await handleConnect(null, true)) {
+      const allAccounts = await session.getWalletAccounts();
+      if (!allAccounts?.length) {
+        alert('Please connect your wallet');
+        return;      
+      }
+      
+      currentAccount = allAccounts[0];
+    }
+    else{
+      alert('Please connect your wallet');
+      return;
+    }
+
+
+    let proof = [];
+    const saleState = await session.getContract().methods.saleState().call()
+      .then(saleState => parseInt(saleState, 10));
+    if (tokenType === 1) {
+      if ((saleState & 1) !== 1) {
+        alert('Nuclear sales are closed');
+        return;
+      }
+
+      proof = merkle.getProof(currentAccount);
+      if (!proof.length) {
+        alert(`The selected wallet ${abbrev(currentAccount)} is not authorized`);
+        return;
+      }
+    }
+    else if (2 <= tokenType && tokenType <= 4) {
+      if ((saleState & 2) !== 2) {
+        alert('Public sales are closed');
+        return;
+      }
+    }
+    else{
+      // invalid tokenType
+      console.warn(`Invalid token type: ${tokenType}`);
+      return;
+    }
+
+    const feeNumerator = BigInt(100) + config.feePercent;
+    const feeDenominator = BigInt(100);
+    const priceEach = config.prices[tokenType];
+    const totalValue = BigInt(quantity) * priceEach;
+    const totalValueWithFees = totalValue * feeNumerator / feeDenominator;
+    const gasLimit = await session.getContract().methods.mint(quantity, tokenType, proof).estimateGas({
+      from: currentAccount,
+      value: String(totalValueWithFees)
+    });
+
+    const name = powerMap[tokenType].name;
+    const noun = quantity === '1' ? 'piggy' : 'piggies';
+    showModal('<p>Minting '+ quantity +' '+ name +' '+ noun +'...</p>');
+
+    const txn = await session.getContract().methods.mint(quantity, tokenType, proof).send({
+      from: currentAccount,
+      gas: gasLimit,
+      value: String(totalValueWithFees)
+    });
+
+    showModal('<p>Congratulations!<br />Mint successful, get ready to explode some piggies.</p>', 5000);
+    handleConnected();
+  }
+  catch (err) {
+    if (err.code === -32000) {
+      alert("Not enough ETH");
+      return;
+    }
+
+    const error = EthereumSession.getError(err);
+    if (error.data) {
+      const selector = error.data.substring(0, 10);
+      const abi = session.errors[selector];
+      if(abi){
+        if(abi.inputs?.length){
+          const args = error.data.substring(10);
+          const decoded = session.web3client.eth.abi.decodeParameters(abi.inputs, args);
+
+          const params = [];
+          for(let i = 0; i < abi.inputs.length; ++i){
+            params.push(decoded[i]);
+          }
+          error.message = abi.name +'('+ params.join(', ') +')';
+        }
+        else{
+          error.message = abi.name;
+        }
+        
+        if (error.message.startsWith("OrderExceedsAllowance")) {
+          error.message = "Only 1 nuclear piggy per wallet";
+        }
+        else if (error.message.startsWith("SalesClosed")) {
+          error.message = "Sales are closed";
+        }
+      }
+    }
+
+    console.error(error);
+    showModal('<p>'+ error.message +'</p>', 5000);
+  }
+};
+
+const handlePledge = async (evt) => {
+  const guildEl = document.getElementById("select-guild");
+  if (!guildEl.value) {
+    showModal("Please select a guild", 5000);
+    return;
+  }
+
+  let currentAccount;
+  if (await handleConnect(null, true)) {
+    const allAccounts = await session.getWalletAccounts();
+    if (!allAccounts?.length) {
+      showModal('Please connect your wallet', 5000);
+      return;      
+    }
+
+    currentAccount = allAccounts[0];
+  }
+  else{
+    showModal('Please connect your wallet', 5000);
+    return;
+  }
+
+
+  const message = {
+    account: currentAccount,
+    timestamp: Math.round(Date.now() / 1000),
+    guild: guildEl.value
+  }
+  const types = {
+    'EIP712Domain': [
+      { name: "name", type: "string" },
+      { name: "chainId", type: "uint256" },
+      { name: "version", type: "string" },
+      { name: "verifyingContract", type: "address" },
+    ],
+    'Message': [
+      { name: "account", type: "address" },
+      { name: "timestamp", type: "uint32" },
+      { name: "guild", type: "string" },
+    ],
+  }
+  const typedData = await session.createTypedData('Message', message, types, 'PIGGYBOMB');
+  const signature = await session.signTypedData(typedData);
+  
+  const init = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      typedData,
+      signature
+    })
+  };
+  const response = await fetch('https://piggies.herodevelopment.com/pledge', init);
+  if (response.ok) {
+    // success
+    // const data = await response.json();
+    showModal("Pledge successful", 5000);
+  }
+  else {
+    showModal("Pledge failed, please try again", 5000);
+  }
+};
+
+const handleTokenBurn = async (evt, token) => {
+  try {
+    if (evt?.cancelable)
+      evt?.preventDefault();
+
+    let currentAccount;
+    if (await handleConnect(null, true)) {
+    	const allAccounts = await session.getWalletAccounts();
+      if (!allAccounts?.length) {
+        alert('Please connect your wallet');
+        return;      
+      }
+
+      currentAccount = allAccounts[0];
+    }
+    else{
+      alert('Please connect your wallet');
+      return;
+    }
+
+
+    const gasLimit = await session.getContract().methods.burn([token.tokenId]).estimateGas({
+      from: currentAccount,
+    });
+
+    showModal('<p>Blasting...</p>');
+    const txn = await session.getContract().methods.burn([token.tokenId]).send({
+      from: currentAccount,
+      gas: gasLimit
+    });
+
+    let html;
+    switch (token.tokenType) {
+      case 1:
+        html = '<p class="title">BOOM! Burn successful!</p>'
+          // +'<h2>NUCLEAR POWER:</h2>'
+          +'<p class="piggie"><img src="https://pigsgetblasted.com/images/Pig_nuclear.gif" style="width:350px"></p>'
+          +'<p class="tweet"><a href="https://twitter.com/intent/tweet?text=I%20am%20become%20death%2C%20destroyer%20of%20worlds.%20Just%20exploded%20a%20nuclear%20PiggyBomb.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766801755922720%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
+
+        showModal(html, 15_000);
+        break;
+
+      case 2:
+        html = '<p class="title">BOOM! Burn successful!</p>'
+          // +'<h2>HIGH POWER:</h2>'
+          +'<p class="piggie"><img src="https://pigsgetblasted.com/images/Pig_big.gif" style="width:350px"></p>'
+          +'<p class="tweet"><a href="https://twitter.com/intent/tweet?text=KABOOM!%20Just%20exploded%20a%20high-power%20PiggyBomb.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766799742656547%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
+
+        showModal(html, 15_000);
+        break;
+
+      case 3:
+        html = '<p class="title">BOOM! Burn successful!</p>'
+          // +'<h2>MEDIUM POWER:</h2>'
+          +'<p class="piggie"><img src="https://pigsgetblasted.com/images/Pig_mid.gif" style="width:350px"></p>'
+          +'<p class="tweet"><a class="" href="https://twitter.com/intent/tweet?text=Exploded%20a%20medium-power%20PiggyBomb%20with%20intention.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766797809123786%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
+
+        showModal(html, 15_000);
+        break;
+
+      case 4:
+        html = '<p class="title">BOOM! Burn successful!</p>'
+          // +'<h2>LOW POWER:</h2>'
+          +'<p class="piggie"><img src="/images/Pig_low.gif" style="width:350px"></p>'
+          +'<p class="tweet"><a href="https://twitter.com/intent/tweet?text=Casually%20exploded%20a%20low-power%20PiggyBomb.%20IYKYK%20%40pigsgetblasted%20on%20%40blast_l2%0A%0Ahttps%3A%2F%2Ftwitter.com%2Fpigsgetblasted%2Fstatus%2F1765766796110422488%2Fphoto%2F1&url=">Tweet For Bonus</a></p>';
+        showModal(html, 15_000);
+        break;
+
+      default:
+        showModal('<p>BOOM! Burn successful!</p>', 5000);
+        break;
+    }
+
+    handleConnected();
+  }
+  catch (err) {
+    if (err.code === -32000) {
+      alert("Not enough ETH");
+      return;
+    }
+
+    const error = EthereumSession.getError(err);
+    if (error.data) {
+      const selector = error.data.substring(0, 10);
+      const abi = session.errors[selector];
+      if(abi){
+        if(abi.inputs?.length){
+          const args = error.data.substring(10);
+          const decoded = session.web3client.eth.abi.decodeParameters(abi.inputs, args);
+
+          const params = [];
+          for(let i = 0; i < abi.inputs.length; ++i){
+            params.push(decoded[i]);
+          }
+          error.message = abi.name +'('+ params.join(', ') +')';
+        }
+        else{
+          error.message = abi.name;
+        }
+        
+        if (error.message.startsWith("ERC721NonexistentToken")) {
+          const tokenId = erorr.message.slice(23, -1);
+          error.message = "Token "+ tokenId +" is no longer assigned to your wallet";
+        }
+        else if (error.message.startsWith("SalesClosed")) {
+          error.message = "Sales are closed";
+        }
+      }
+    }
+
+    console.error(error);
+    showModal('<p>'+ error.message +'</p>', 5000);
+  }
+};
+
+const renderExploded = (exploded) => {
+  const myExploded = document.getElementById('my-exploded');
+  if (exploded.length) {
+    let html = '';
+    for (let i = 0; i < exploded.length; ++i) {
+      const token = exploded[i];
+      html += renderExplode(token, i);
+    }
+    
+    myExploded.innerHTML = html;
+  }
+  else{
+    myExploded.innerHTML = "It's almost time for makin' bacon!";
+  }
+};
+
+const renderTokens = (tokens) => {
+  const myPiggyBombs = document.getElementById('my-piggybombs');
+  if (tokens.length) {
+    myPiggyBombs.innerHTML = '';
+
+    for (const token of tokens) {
+      const el = renderToken(token, true);
+      myPiggyBombs.appendChild(el);
+    }
+  }
+  else{
+    myPiggyBombs.innerHTML = "Get more piggies!";
+  }
+};
+
+const showModal = (content, timeout) => {
+  const modal = document.getElementById('toast-modal');
+  const contentEl = modal.querySelector('.content');
+  if (content) {
+    contentEl.innerHTML = content;
+    modal.style.display = 'block';
+
+    if (timeout) {
+      setTimeout(() => {
+        // TODO: fade
+        modal.style.display = 'none';
+        contentEl.innerHTML = '';
+      }, timeout);
+    }
+  }
+  else {
+    modal.style.display = 'none';
+    contentEl.innerHTML = '';
+  }
+};
+
+const threeTry = (callback) => {
+  return new Promise(async (resolve, reject) => {
+    let lastError;
+    for(let i = 0; i < 3; ++i) {
+      try{
+        const result = await callback();
+        resolve(result);
+        return;
+      }
+      catch(err) {
+        lastError = err;
+      }
+    }
+    
+    reject(lastError);
+  });
+};
+
+const renderExplode = (token, i) => {
+  const date = new Date(token.burnTS * 1000);
+  const power = powerMap[token.tokenType];
+  const html = ''
+    +'  <div class="pig-item">'
+    +'      <div class="pig-image"><img src="'+ power.image +'" alt="" /></div>'
+    +'      <div  class="pig-text">'
+    +'          <p>Power: '+ power.name +'</p>'
+    +'          <p>Exploded Date:</p>'
+    +'          <p>'+ date.toLocaleDateString() +'</p>'
+    +'          <p>At '+ date.toLocaleTimeString() +'</p>'
+    +'      </div>'
+    +'  </div>'
+
+  return html;
+};
+
+const renderRecentExplosions = (explosions) => {
+  if (explosions.length == 0)
+    return;
+
+  const container = document.getElementById('history-items');
+  if (!container)
+    return;
+
+
+  container.innerHTML = '<div class="history-line-box"><div class="history-line"></div></div>';
+
+  for (let exp of explosions) {
+    const item = document.createElement('div');
+    item.classList.add('history-item');
+    
+    let [y, m, d] = exp.date.split('-');
+    d = parseInt(d, 10);
+
+    const h3 = document.createElement('h3');
+    h3.innerText = `${months[m]} ${d}`;
+    item.appendChild(h3);
+    
+    const h4 = document.createElement('h4');
+    h4.innerText = `${exp.total} explosions`;
+    item.appendChild(h4);
+
+    const counts = [];
+    for (let i = 1; i < 5; ++i) {
+      if (exp[i]) {
+        counts.push(`${exp[i]} ${names[i]}`);
+      }
+    }
+
+    const p = document.createElement('p');
+    p.innerText = '('+ counts.join(', ') +')';
+    item.appendChild(p);
+
+    container.appendChild(item);
+  }
+  
+  document.getElementById('section6').style.display = 'block';
+}
+
+const renderToken = (token) => {
+  const date = new Date(token.mintTS * 1000);
+  const power = powerMap[token.tokenType];
+  const innerHTML = ''
+    +'  <div class="mint-item-box">'
+    +'      <div class="image-box">'
+    +'          <img src="'+ power.image +'" loading="lazy" alt="" class="full-image">'
+    +'          <div class="mint-label">Power: '+ power.name +'</div>'
+    +'      </div>'
+    +'      <div class="action-box">'
+    +'          <div class="mint-text">Mint Date: '+ date.toLocaleDateString() +'</div>'
+    +'      </div>'
+    +'  </div>';
+  
+  const el = document.createElement('div');
+  el.innerHTML = innerHTML;
+  el.classList.add('flex-item');
+  el.style.cursor = 'pointer';
+  el.addEventListener('click', (evt) => handleTokenBurn(evt, token));
+
+  return el;
+};
+
+document.addEventListener('DOMContentLoaded', async () => {
+  document.getElementById('connect-wallet')?.addEventListener('click', (evt) => handleConnect(evt, true));
+  document.getElementById('mint-small')?.addEventListener('click',   handleMintSmall);
+  document.getElementById('mint-medium')?.addEventListener('click',  handleMintMedium);
+  document.getElementById('mint-large')?.addEventListener('click',   handleMintLarge);
+  document.getElementById('mint-nuclear')?.addEventListener('click', handleMintNuclear);
+
+  document.getElementById('pledge-button')?.addEventListener('click', handlePledge);
+
+  handleInit();
+});
+</script>
+    </body>
+</html>

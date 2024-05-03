@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const countdownEl = document.getElementById("countdown");
   if (countdownEl) {
     // Set the future date and time to count down to
-    const countdownDate = new Date("2024-03-27T12:00:00-05:00").getTime();
+    const countdownDate = new Date("2024-05-01T12:00:00-05:00").getTime();
   
     // Update the countdown every second
     const countdown = setInterval(function() {
@@ -123,6 +123,11 @@ document.addEventListener("DOMContentLoaded", function() {
   color: white;
   font-size: 1.2em;
 }
+
+.margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>
 </head>   
 <body class="body">
@@ -196,6 +201,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="container short">
                     <h2 class="section__heading">Mint <span class="yellow">Piggybombs.</span> </h2>
                     <div class="section__subheading">ETH is <span class="yellow">Refundable</span> Minus 5% Mint Fee</div>
+                    <div class="section__subheading">Total Minted: <span id="total-minted" class="yellow">...</span></div>
+                    <div class="section__subheading">Bombs minted today yield more than bombs minted tomorrow.</div>
                 </div>
             </div>
             <div class="content-box dots">
@@ -239,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                             </div>
                             <div class="action-box">
-                                <a href="#" id="mint-medium" class="mint-button">Mint</a>
+                                <a href="#" id="mint-medium" class="mint-button">Sold Out</a>
                             </div>
                         </div>
                         <div id="w-node-_185001ba-e326-5b73-9fd4-748cd6860a10-45d0d8a1" class="mint-item-box">
@@ -259,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                             </div>
                             <div class="action-box">
-                                <a href="#" id="mint-large" class="mint-button">Mint</a>
+                                <a href="#" id="mint-large" class="mint-button">Sold Out</a>
                             </div>
                         </div>
                         <div id="w-node-a79ca671-e8d0-236e-0b39-66e7af5934d1-45d0d8a1" class="mint-item-box">
@@ -279,95 +286,6 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         </section>
 
- <!-- Section2 -->
-        <section class="section" id="section2">
-            <div class="heading-box center">
-                <div class="container short">
-                    <h2 class="section__heading">STAKE ETH <span class="yellow">ACQUIRE HOUSES</span></h2>
-                    <div class="section__subheading">5% Staking Fee. 2X Houses for 12 months, 4X for 24 months. Non-Tradeable.</div>
-                </div>
-            </div>
-            <div class="content-box dots">
-                <div class="container short">
-                    <div class="grid">
-                        <div id="w-node-_5739cb7f-a43b-dcfa-91b4-069deeac0123-45d0d8a1" class="mint-item-box">
-                            <div class="image-box">
-                                <img src="/images/pig2.webp" loading="lazy" alt="" class="full-image">
-
-                                <div class="mint-qty">
-                                    <div class="mint-qty-input">
-                                        <button class="minus-btn">
-                                            <img src="images/minus.png" alt="" />                                            
-                                        </button>
-                                        <input type="number" id="quantity-small" name="qty" value="1" min="1" step="1" />
-                                        <button class="plus-btn">
-                                            <img src="images/plus.png" alt="" />                                            
-                                        </button>
-                                    </div>
-                                    <div class="mint-label">Straw <span>-0.25 ETH</span></div>
-                                </div>
-                            </div>
-                            <div class="action-box">
-                                <a href="#" id="mint-small" class="mint-button">Stake</a>
-                            </div>
-                        </div>
-                        <div id="w-node-bb9a5d7b-15f4-957c-3a3b-91c0f19ca624-45d0d8a1" class="mint-item-box">
-                            <div class="image-box">
-                                <img src="images/pig_mid.webp" loading="lazy" alt="" class="full-image">
-                                <div class="mint-qty">
-                                    <div class="mint-qty-input">
-                                        <button class="minus-btn">
-                                            <img src="images/minus.png" alt="" />                                            
-                                        </button>
-                                        <input type="number" id="quantity-medium" name="qty" value="1" min="1" step="1" />
-                                        <button class="plus-btn">
-                                            <img src="images/plus.png" alt="" />                                            
-                                        </button>
-                                    </div>
-                                    <div class="mint-label">Sticks <span>-0.5 ETH</span></div>
-                                </div>
-                            </div>
-                            <div class="action-box">
-                                <a href="#" id="mint-medium" class="mint-button">Stake</a>
-                            </div>
-                        </div>
-                        <div id="w-node-_185001ba-e326-5b73-9fd4-748cd6860a10-45d0d8a1" class="mint-item-box">
-                            <div class="image-box">
-                                <img src="images/pig_big.webp" loading="lazy" alt="" class="full-image">
-                                <div class="mint-qty">
-                                    <div class="mint-qty-input">
-                                        <button class="minus-btn">
-                                            <img src="images/minus.png" alt="" />                                            
-                                        </button>
-                                        <input type="number" id="quantity-large" name="qty" value="1" min="1" step="1" />
-                                        <button class="plus-btn">
-                                            <img src="images/plus.png" alt="" />                                            
-                                        </button>
-                                    </div>
-                                    <div class="mint-label">Bricks <span>-1 ETH</span></div>
-                                </div>
-                            </div>
-                            <div class="action-box">
-                                <a href="#" id="mint-large" class="mint-button">Stake</a>
-                            </div>
-                        </div>
-                        <div id="w-node-a79ca671-e8d0-236e-0b39-66e7af5934d1-45d0d8a1" class="mint-item-box">
-                            <div class="image-box">
-                                <img src="images/pig_nuke.webp" loading="lazy" alt="" class="full-image">
-                                <div class="mint-qty">
-                                    
-                                    <div class="mint-label">Nuclear<span>-2 ETH</span></div>
-                                </div>
-                            </div>
-                            <div class="action-box">
-                                <a href="#" id="mint-nuclear" class="mint-button">Stake</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>	
-
         <!-- Section3 -->
         <section id="section3" class="section">
             <div class="container">
@@ -380,7 +298,13 @@ document.addEventListener("DOMContentLoaded", function() {
                         <div id="my-piggybombs" class="flex">
                                                   
                         </div>
+                        
+                        <div class="action-box" style="margin-top: 2em;">
+                            <a href="#" id="explode-all" class="mint-button margin-center">Explode All</a>
+                        </div>
+                        
                         <div class="title-box">
+                            <h3 class="heading__medium left">Game <span class="yellow">Status:</span> <span id="sale-state">Active</span></h3>
                             <!-- <h3 class="heading__medium right">Game <span class="yellow">Clock:</span> 90D 0H 0M</h3> -->
                         </div>
     
@@ -390,27 +314,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     <div class="image-box" id="image-box1"><img src="images/frame2.png" alt="" /></div>
                     <div class="image-box" id="image-box2"><img src="images/frame1.png" alt="" /></div>                    
                     <div class="image-box" id="image-box3"><img src="images/horizontal-dots.png" alt="" /></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section4 -->
-        <section id="section4" class="section">
-            <div class="container">
-                <div class="heading-box center">
-                    <div class="container short">
-                        <h2 class="section__heading">My Houses. <span class="yellow">Under Construction.</span></span></h2>
-                        <div class="section__subheading">Total XP: <span class="yellow">3,218</span></div>
-			<div class="section__subheading">Help construction along. Click house once per day for a daily XP boost.</div>			    
-                    </div>
-                </div>
-                <div class="content-box">
-                    <div class="pigs-box">
-                        <div id="my-exploded" class="pigs-box-wrapper">
-                            
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -432,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                 </div>
             </div>
-        </section>	
+        </section>
 
 
         <!-- pledges -->
@@ -1006,6 +909,93 @@ const handlePledge = async (evt) => {
   }
 };
 
+const handleExplodeAll = async (evt) => {
+  try {
+    if (evt?.cancelable)
+      evt?.preventDefault();
+
+    let currentAccount;
+    if (await handleConnect(null, true)) {
+    	const allAccounts = await session.getWalletAccounts();
+      if (!allAccounts?.length) {
+        alert('Please connect your wallet');
+        return;      
+      }
+
+      currentAccount = allAccounts[0];
+    }
+    else{
+      alert('Please connect your wallet');
+      return;
+    }
+
+
+    const tokenIds = await session.getContract().methods.tokensOfOwner(currentAccount, 0, 0).call();
+    if (!tokenIds.length) {
+      showModal('<p>No piggybombs in your wallet :-(</p>', 5_000);
+      return;
+    }
+
+
+    const gasLimit = await session.getContract().methods.burn(tokenIds).estimateGas({
+      from: currentAccount,
+    });
+
+    showModal('<p>Blasting EVERYTHING ...</p>');
+    const txn = await session.getContract().methods.burn(tokenIds).send({
+      from: currentAccount,
+      gas: gasLimit
+    });
+
+    const html = '<p class="title">SUPER BOOM!!!</p>'
+      +'<p class="piggie">All the piggies went wee-wee-wee!</p>';
+
+    showModal(html, 10_000);
+
+    // showModal('<p>BOOM! Burn successful!</p>', 5000);
+
+    handleConnected();
+  }
+  catch (err) {
+    if (err.code === -32000) {
+      alert("Not enough ETH");
+      return;
+    }
+
+    const error = EthereumSession.getError(err);
+    if (error.data) {
+      const selector = error.data.substring(0, 10);
+      const abi = session.errors[selector];
+      if(abi){
+        if(abi.inputs?.length){
+          const args = error.data.substring(10);
+          const decoded = session.web3client.eth.abi.decodeParameters(abi.inputs, args);
+
+          const params = [];
+          for(let i = 0; i < abi.inputs.length; ++i){
+            params.push(decoded[i]);
+          }
+          error.message = abi.name +'('+ params.join(', ') +')';
+        }
+        else{
+          error.message = abi.name;
+        }
+        
+        if (error.message.startsWith("ERC721NonexistentToken")) {
+          const tokenId = erorr.message.slice(23, -1);
+          error.message = "Token "+ tokenId +" is no longer assigned to your wallet";
+        }
+        else if (error.message.startsWith("SalesClosed")) {
+          error.message = "Sales are closed";
+        }
+      }
+    }
+
+    console.error(error);
+    showModal('<p>'+ error.message +'</p>', 5000);
+  }
+};
+
 const handleTokenBurn = async (evt, token) => {
   try {
     if (evt?.cancelable)
@@ -1276,6 +1266,9 @@ const renderToken = (token) => {
 
 document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('connect-wallet')?.addEventListener('click', (evt) => handleConnect(evt, true));
+
+  document.getElementById('explode-all')?.addEventListener('click',  handleExplodeAll);
+
   document.getElementById('mint-small')?.addEventListener('click',   handleMintSmall);
   document.getElementById('mint-medium')?.addEventListener('click',  handleMintMedium);
   document.getElementById('mint-large')?.addEventListener('click',   handleMintLarge);

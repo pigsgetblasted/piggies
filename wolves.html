@@ -1,0 +1,247 @@
+<html>
+<head>
+    <meta charset="utf-8"><title>WOLVES</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+</head>   
+<body class="body">
+        <div id="connect-container">
+            <button id="connect-wallet">Connect Wallet</button>
+        </div>
+
+        <div id="mint-container">
+            <select id="mint-quantity">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+            </select>
+            
+            <button id="mint-button">Mint Wolves</button>
+        </div>
+
+        <!-- <script type="text/javascript" src="https://unpkg.com/web3@1.6.0/dist/web3.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.4/web3.min.js" integrity="sha512-jrrqoRbH3+TZhsm54CVfS3hsIPDC2lYTXFBTJ5AkjRzcxtdlXxpSpYj0HGoN8DNkMD4zq1IjJpWBHI5KPGUYhg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.4/dist/index.js"></script> -->
+        <!-- <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.7.0/dist/umd/index.min.js"></script> -->
+        <!-- <script type="text/javascript" src="/js/walletlink.bundle.js"></script> -->
+
+        <script type="text/javascript" src="/js/eth-session.js"></script>
+<script>
+// mainnet
+const session = new EthereumSession({
+	chain:           EthereumSession.COMMON_CHAINS[81457],
+	contractAddress: '0xd43e28d76f901Da185DDB7f1Ea65a6e45c7a7D98',
+	contractABI:     [{"inputs":[{"internalType":"address","name":"_blastContract","type":"address"},{"internalType":"address","name":"_pointsContract","type":"address"},{"internalType":"address","name":"_pointsOperator","type":"address"},{"internalType":"address","name":"wolves","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"OwnableInvalidOwner","type":"error"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"OwnableUnauthorizedAccount","type":"error"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":false,"internalType":"address","name":"executor","type":"address"}],"name":"TempExecutor","type":"event"},{"inputs":[],"name":"BLAST","outputs":[{"internalType":"contract IBlast","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"BLAST_POINTS","outputs":[{"internalType":"contract IBlastPoints","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"MINT_PRICE","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"WOLVES_CONTRACT","outputs":[{"internalType":"contract IBlaze","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_blastContract","type":"address"}],"name":"setBlastContract","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_pointsContract","type":"address"},{"internalType":"address","name":"_pointsOperator","type":"address"}],"name":"setBlastPointsConfig","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"mintPrice","type":"uint256"}],"name":"setMintPrice","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+});
+
+const abbrev = ( account ) => {
+	return account.substring( 0, 6 ) +'...'+ account.substring( account.length - 4 );
+}
+
+const handleConnect = async (evt, deep) => {
+	if (evt?.cancelable)
+		evt?.preventDefault();
+
+	// if (deep) {
+	// 	try{
+	// 		this.provider = await modal.connect();
+	// 	}
+	// 	catch (e) {
+	// 		console.warn({e});
+	// 		if( e && e !== 'Modal closed by user' )
+	// 			alert( "Connection failed, please try again" );
+  // 
+	// 		return false;
+	// 	}
+	// }
+
+	if (await session.connectWeb3(deep)) {
+		await handleConnected();
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+const handleConnected = async () => {
+	const allAccounts = await session.getWalletAccounts();
+  if (allAccounts?.length) {
+    const currentAccount = allAccounts[0];
+    document.getElementById('connect-wallet').innerText = abbrev(currentAccount);
+  }
+};
+
+const handleInit = async () => {
+	try{
+		await handleConnect();
+	}
+	catch(err){
+		console.warn({ err });
+	}
+};
+
+const handleMint = async (evt) => {
+  try {
+    const quantity = document.getElementById('mint-quantity').value;
+
+    const tmpQuantity = parseInt(quantity, 10);
+    if (Number.isNaN(tmpQuantity)) {
+      console.warn(`Invalid quantity: ${quantity}`);
+      return;
+    }
+
+    if (tmpQuantity === 0) {
+      alert('Please select a quantity');
+      console.warn(`Invalid quantity: ${quantity}`);
+      return;
+    }
+
+
+    let currentAccount;
+    if (await handleConnect(null, true)) {
+      const allAccounts = await session.getWalletAccounts();
+      if (!allAccounts?.length) {
+        alert('Please connect your wallet');
+        return;      
+      }
+      
+      currentAccount = allAccounts[0];
+    }
+    else{
+      alert('Please connect your wallet');
+      return;
+    }
+
+
+    const priceEach = BigInt('55000000000000000');
+    const totalValue = BigInt(quantity) * priceEach;
+    const gasLimit = await session.getContract().methods.mint(quantity).estimateGas({
+      from: currentAccount,
+      value: String(totalValue)
+    });
+
+
+    // showModal('<p>Minting '+ quantity +' '+ name +' '+ noun +'...</p>');
+
+    const txn = await session.getContract().methods.mint(quantity).send({
+      from: currentAccount,
+      gas: gasLimit,
+      value: String(totalValue)
+    });
+
+    showModal('Mint successful!', 5000);
+    handleConnected();
+  }
+  catch (err) {
+    if (err.code === -32000) {
+      alert("Not enough ETH");
+      return;
+    }
+
+    const error = EthereumSession.getError(err);
+    if (error.data) {
+      const selector = error.data.substring(0, 10);
+      const abi = session.errors[selector];
+      if(abi){
+        if(abi.inputs?.length){
+          const args = error.data.substring(10);
+          const decoded = session.web3client.eth.abi.decodeParameters(abi.inputs, args);
+
+          const params = [];
+          for(let i = 0; i < abi.inputs.length; ++i){
+            params.push(decoded[i]);
+          }
+          error.message = abi.name +'('+ params.join(', ') +')';
+        }
+        else{
+          error.message = abi.name;
+        }
+      }
+    }
+
+    console.error(error);
+    showModal(error.message, 5000);
+  }
+};
+
+const showModal = (content, timeout) => {
+  alert(content);
+  return;
+
+  const modal = document.getElementById('toast-modal');
+  const contentEl = modal.querySelector('.content');
+  if (content) {
+    contentEl.innerHTML = content;
+    modal.style.display = 'block';
+
+    if (timeout) {
+      setTimeout(() => {
+        // TODO: fade
+        modal.style.display = 'none';
+        contentEl.innerHTML = '';
+      }, timeout);
+    }
+  }
+  else {
+    modal.style.display = 'none';
+    contentEl.innerHTML = '';
+  }
+};
+
+document.addEventListener('DOMContentLoaded', async () => {
+  document.getElementById('connect-wallet')?.addEventListener('click', (evt) => handleConnect(evt, true));
+  document.getElementById('mint-button')?.addEventListener('click', (evt) => handleMint(evt));
+
+  handleInit();
+});
+</script>
+</body>
+</html>
